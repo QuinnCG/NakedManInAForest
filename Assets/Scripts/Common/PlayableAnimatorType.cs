@@ -1,4 +1,4 @@
-﻿namespace Quinn.Common
+﻿namespace Quinn
 {
 	public enum PlayableAnimatorType
 	{

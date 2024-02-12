@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.Playables;
 
-namespace Quinn.Common
+namespace Quinn
 {
 	[RequireComponent(typeof(SpriteRenderer))]
 	public class PlayableAnimator : MonoBehaviour
