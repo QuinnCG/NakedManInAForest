@@ -18,7 +18,7 @@ namespace Quinn
 
 			if (!TryGetComponent(out _direction))
 			{
-				Debug.LogError($"{nameof(Movement)} must be on the same gameObject as a component that implements {nameof(IFacing)}!");
+				throw new System.NullReferenceException($"{nameof(Movement)} must be on the same gameObject as a component that implements {nameof(IFacing)}!");
 			}
 		}
 

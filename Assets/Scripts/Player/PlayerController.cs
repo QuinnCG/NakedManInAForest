@@ -21,6 +21,11 @@ namespace Quinn.Player
 
 		private void Update()
 		{
+			UpdateMove();
+		}
+
+		private void UpdateMove()
+		{
 			var moveDir = _input.Move.ReadValue<Vector2>().normalized;
 			if (moveDir.sqrMagnitude > 0f) _direction = moveDir;
 			_movement.Move(moveDir);
