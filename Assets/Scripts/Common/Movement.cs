@@ -33,6 +33,14 @@ namespace Quinn
 			FaceDirection(_direction.Direction.x);
 		}
 
+		public void MoveTowards(Vector2 target)
+		{
+			Vector2 dir = target - (Vector2)transform.position;
+			dir.Normalize();
+
+			Move(dir);
+		}
+
 		public void FaceDirection(float x)
 		{
 			if (x > 0f)

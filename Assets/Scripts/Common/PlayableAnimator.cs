@@ -18,6 +18,18 @@ namespace Quinn
 		[Space, SerializeField, ShowIf(nameof(AnimatorType), Value = PlayableAnimatorType.PlaySequence)]
 		private AnimationClip[] AnimationSequence;
 
+		public float Speed
+		{
+			get => _speed;
+			set
+			{
+				_speed = value;
+				_graph.GetRootPlayable(0).SetSpeed((float)value);
+			}
+		}
+
+		private float _speed = 1f;
+
 		private PlayableGraph _graph;
 		private AnimationPlayableOutput _output;
 
@@ -64,6 +76,8 @@ namespace Quinn
 		{
 			if (!enabled)
 				return null;
+
+			StopAllCoroutines();
 
 			if (anim == _activeAnim)
 				return _activeAnim;

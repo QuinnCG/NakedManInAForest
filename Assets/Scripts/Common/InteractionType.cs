@@ -3,8 +3,8 @@
 	public enum InteractionType
 	{
 		PickUp,
+		Attack,
 		Fell,
-		Mine,
-		Slaughter
+		Mine
 	}
 }
