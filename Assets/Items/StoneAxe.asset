@@ -10,19 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4e5ab351eaa5fb44825c8ca7ce1c38f, type: 3}
-  m_Name: EmptyHand
+  m_Name: StoneAxe
   m_EditorClassIdentifier: 
-  IsVirtual: 1
-  DisplayName: Item Name
-  Description: 'This is the item''s description.
-
-    It can be multi-line.'
-  Sprite: {fileID: 0}
-  MaxStack: 16
-  MaxUses: -1
-  IsEquippable: 0
-  InteractionType: 0
-  InteractPlaybackFactor: 1
+  DisplayName: Stone Axe
+  Description: A crude but effective chopping tool.
+  Sprite: {fileID: 7286922309841802310, guid: cedf947c76a88b54e82b6145d61a90c8, type: 3}
+  MaxStack: 1
+  MaxUses: 64
+  IsEquippable: 1
+  InteractionType: 2
+  InteractPlaybackFactor: 0.8
   IsWearable: 0
   AttireType: 0
   DamageReduction: 0

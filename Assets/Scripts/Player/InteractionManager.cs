@@ -89,6 +89,7 @@ namespace Quinn.Player
 			{
 				StopCoroutine(_interactSequence);
 				IsInteracting = false;
+				_animator.Speed = 1f;
 			}
 		}
 
@@ -125,9 +126,15 @@ namespace Quinn.Player
 				.First()
 				.Animation;
 
+			// Change playback speed.
+			var item = _inventory.HeldItem;
+			if (item.InteractionType == _interactable.InteractionType)
+			{
+				_animator.Speed = item.InteractPlaybackFactor;
+			}
+
 			// Play animation.
 			_animator.Play(interactAnim);
-			_animator.Speed = _inventory.HeldItem.InteractPlaybackFactor;
 
 			// Wait for animation to end.
 			yield return new WaitForSeconds(interactAnim.length);
