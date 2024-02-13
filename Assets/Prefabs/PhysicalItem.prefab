@@ -136,3 +136,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa24916a58253c94483307a0c14a8bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PickUpSound:
+    Guid:
+      Data1: 1789935145
+      Data2: 1196833934
+      Data3: -208088899
+      Data4: 1533391130
+    Path: event:/SFX/Marimba Pick Up

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="MixerReturn" id="{a48749ec-d593-44b8-a4e3-42046f6d248b}">
+		<property name="color">
+			<value>Purple</value>
+		</property>
 		<property name="overridingInputFormat">
 			<value>2</value>
 		</property>

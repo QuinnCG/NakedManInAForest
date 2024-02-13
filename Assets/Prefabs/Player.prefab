@@ -342,6 +342,7 @@ GameObject:
   - component: {fileID: 9047577049155166565}
   - component: {fileID: 8792786488899925582}
   - component: {fileID: 4458078583595016565}
+  - component: {fileID: 5399143782152275831}
   m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
@@ -482,6 +483,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45dd927faf85a9a4f8617db4dd7aa0dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5399143782152275831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7132800949442882638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e28dd7c7ccfed4f98f6ce37ac56c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7714403992029516367
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,6 +622,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IdleAnim: {fileID: 7400000, guid: 54201c430263a4143b8f0a8b175b6040, type: 2}
   <MoveAnim>k__BackingField: {fileID: 7400000, guid: f7d7a88b20ae625449210ed79dd30c14, type: 2}
+  StartMoveSound:
+    Guid:
+      Data1: 1658554884
+      Data2: 1201437648
+      Data3: 919526076
+      Data4: 1406529627
+    Path: event:/SFX/Bass Clarinet Footstep
 --- !u!114 &5621118034174383070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -880,3 +900,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EmptyHand: {fileID: 11400000, guid: 8b66507e3763c7d4c8e21ce85e179d7b, type: 2}
+  SlotCount: 6

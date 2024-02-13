@@ -1,3 +1,4 @@
+using FMODUnity;
 using Sirenix.OdinInspector;
 using System;
 using UnityEngine;
@@ -15,10 +16,15 @@ namespace Quinn.Player
 		[field: SerializeField, Required]
 		public AnimationClip MoveAnim { get; private set; }
 
+		[SerializeField]
+		private EventReference StartMoveSound;
+
 		private PlayableAnimator _animator;
 		private InputReader _input;
 		private Movement _movement;
 		private InteractionManager _interaction;
+
+		private float _lastVel;
 
 		public Vector2 Direction => _direction;
 
@@ -53,6 +59,11 @@ namespace Quinn.Player
 		private void OnStartMove()
 		{
 			_interaction.CancelInteraction();
+
+			if (_lastVel == 0f)
+			{
+				RuntimeManager.PlayOneShot(StartMoveSound, transform.position);
+			}
 		}
 
 		private void UpdateMove()
