@@ -53,35 +53,45 @@ namespace Quinn.Player
 			UpdateForIndex(3);
 			UpdateForIndex(4);
 			UpdateForIndex(5);
-
-			if (Input.GetKeyDown(KeyCode.Escape))
-			{
-				Select(-1);
-			}
 		}
 
 		public void Select(int index)
 		{
+			// Deselect.
+			if (index == -1)
+			{
+				HeldItem = null;
+				_selectedSlot = -1;
+				OnSelect?.Invoke(-1);
+
+				return;
+			}
+
+			// Tried selecting an unselected slot.
 			if (_selectedSlot != index)
 			{
-				if (index == -1)
+				// Tried to select empty slot, deselecting.
+				if (GetAt(index) == null)
 				{
-					OnSelect?.Invoke(-1);
-					HeldItem = null;
-					_selectedSlot = -1;
-
+					Select(-1);
 					return;
 				}
 
-				_selectedSlot = index;
-
-				if (index > -1)
+				// Select unselected slot.
+				if (GetAt(index).Item.IsEquippable)
 				{
-					var slot = GetAt(index);
-					HeldItem = slot?.Item;
-				}
+					_selectedSlot = index;
 
-				OnSelect(index);
+					var slot = GetAt(index);
+					HeldItem = slot.Item;
+
+					OnSelect(index);
+				}
+			}
+			// Tried selecting already selected slot, deselecting.
+			else
+			{
+				Select(-1);
 			}
 		}
 
@@ -157,7 +167,7 @@ namespace Quinn.Player
 
 		public bool Add(Item item, int count, int uses = -1)
 		{
-			if (item == null || count  <= 0)
+			if (item == null || count <= 0)
 			{
 				throw new NullReferenceException($"Failed to add item '{item}'!");
 			}
@@ -249,6 +259,12 @@ namespace Quinn.Player
 			var slot = GetAt(a);
 			Set(a, GetAt(b));
 			Set(b, slot);
+
+			if (GetAt(a).Item.IsEquippable != GetAt(b).Item.IsEquippable
+				&& (_selectedSlot == a || _selectedSlot == b))
+			{
+				Select(-1);
+			}
 
 			Reconstruct();
 		}
