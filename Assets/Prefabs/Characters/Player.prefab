@@ -985,7 +985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56d854e57b5a0194cb2100b5178ce657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EmptyHand: {fileID: 11400000, guid: 8b66507e3763c7d4c8e21ce85e179d7b, type: 2}
+  <EmptyHand>k__BackingField: {fileID: 11400000, guid: 8b66507e3763c7d4c8e21ce85e179d7b, type: 2}
   HeldItemSprite: {fileID: 1376093544661111875}
   <SlotCount>k__BackingField: 6
   EquipSound:

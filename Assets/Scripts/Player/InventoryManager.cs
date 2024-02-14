@@ -9,9 +9,6 @@ namespace Quinn.Player
 	public class InventoryManager : MonoBehaviour
 	{
 		[SerializeField, Required]
-		private Item EmptyHand;
-
-		[SerializeField, Required]
 		private SpriteRenderer HeldItemSprite;
 
 		[field: SerializeField]
@@ -20,20 +17,12 @@ namespace Quinn.Player
 		[SerializeField]
 		private EventReference EquipSound, DequipSound;
 
-		public Item HeldItem
-		{
-			get
-			{
-				return _heldItem == null ? EmptyHand : _heldItem;
-			}
-			set => _heldItem = value;
-		}
+		public Item HeldItem { get; private set; }
 
 		public event Action OnChanged;
 		public event Action<int> OnSelect;
 
 		private int _selectedSlot = -1;
-		private Item _heldItem;
 		private Slot[] _inventory;
 
 		private void Awake()
