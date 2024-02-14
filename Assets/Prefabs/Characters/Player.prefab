@@ -879,6 +879,14 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Dash
       m_Flags: 0
+    - m_Name: 
+      m_Id: af3f2891-6f4d-4fd0-9c81-322452f41284
+      m_Path: <Keyboard>/shift
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Dash
+      m_Flags: 0
     m_Flags: 0
   <Inventory>k__BackingField:
     m_Name: Inventory
@@ -955,6 +963,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <MoveSpeed>k__BackingField: 4
+  DashDuration: 0.1
+  DashSpeed: 12
+  DashCooldown: 0.35
+  DashSound:
+    Guid:
+      Data1: -1788828071
+      Data2: 1156226109
+      Data3: 908227729
+      Data4: -978161824
+    Path: event:/SFX/Bass Flute Dash
 --- !u!114 &2943815829334588497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -969,7 +987,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EmptyHand: {fileID: 11400000, guid: 8b66507e3763c7d4c8e21ce85e179d7b, type: 2}
   HeldItemSprite: {fileID: 1376093544661111875}
-  CharacterSprite: {fileID: 940326335585851106}
   <SlotCount>k__BackingField: 6
   EquipSound:
     Guid:

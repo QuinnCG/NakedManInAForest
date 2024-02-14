@@ -39,6 +39,7 @@ namespace Quinn.Player
 
 			_input.Move.performed += _ => OnStartMove();
 			_input.Interact.performed += _ => OnInteract();
+			_input.Dash.performed += _ => OnDash();
 		}
 
 		private void Start()
@@ -78,6 +79,11 @@ namespace Quinn.Player
 		private void OnInteract()
 		{
 			_interaction.PollNearbyInteractables();
+		}
+
+		private void OnDash()
+		{
+			_movement.Dash();
 		}
 	}
 }

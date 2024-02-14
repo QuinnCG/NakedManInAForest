@@ -31,7 +31,6 @@ namespace Quinn
 		public Timer()
 		{
 			Duration = 0f;
-			Reset();
 		}
 		public Timer(float duration, bool startFinished = false)
 		{
