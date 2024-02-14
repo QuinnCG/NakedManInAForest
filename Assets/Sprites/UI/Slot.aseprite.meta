@@ -79,7 +79,7 @@ ScriptedImporter:
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
-    generateModelPrefab: 1
+    generateModelPrefab: 0
     generateAnimationClips: 0
     addSortingGroup: 1
     addShadowCasters: 0
@@ -92,12 +92,12 @@ ScriptedImporter:
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
-    generateModelPrefab: 1
+    generateModelPrefab: 0
     generateAnimationClips: 0
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638434499230167640
+  platformSettingsDirtyTick: 638434632994599029
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -125,7 +125,7 @@ ScriptedImporter:
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 3, y: 3, z: 3, w: 3}
     rect:
       serializedVersion: 2
       x: 4
@@ -145,7 +145,7 @@ ScriptedImporter:
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 4, y: 4, z: 4, w: 4}
     rect:
       serializedVersion: 2
       x: 4
@@ -161,6 +161,26 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: Crafting Slot
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 28
+      y: 4
+      width: 12
+      height: 12
+    spriteID: c0092a39791b20540ad5229b815ee452
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 28, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -195,6 +215,23 @@ ScriptedImporter:
         width: 16
         height: 16
       spriteId: 00203c314ad93e641ada34677f73acce
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 2
+    guid: 2072222790
+    name: Crafting Slot
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Crafting Slot
+      frameIndex: 0
+      cellRect:
+        x: 2
+        y: 2
+        width: 12
+        height: 12
+      spriteId: c0092a39791b20540ad5229b815ee452
     linkedCells: []
     parentIndex: -1
   platformSettings:
