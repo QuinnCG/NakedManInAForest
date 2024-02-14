@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Stone Axe
   Description: A crude but effective chopping tool.
-  Sprite: {fileID: 7286922309841802310, guid: cedf947c76a88b54e82b6145d61a90c8, type: 3}
+  Sprite: {fileID: 7253819879580863142, guid: cedf947c76a88b54e82b6145d61a90c8, type: 3}
   MaxStack: 1
   MaxUses: 64
   IsEquippable: 1

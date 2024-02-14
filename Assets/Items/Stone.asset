@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Stone
   Description: A chunk of stone, roughly the size of a fat head.
-  Sprite: {fileID: 4484568475447518009, guid: cedf947c76a88b54e82b6145d61a90c8, type: 3}
+  Sprite: {fileID: -3294544417855146453, guid: cedf947c76a88b54e82b6145d61a90c8, type: 3}
   MaxStack: 8
   MaxUses: -1
   IsEquippable: 0
