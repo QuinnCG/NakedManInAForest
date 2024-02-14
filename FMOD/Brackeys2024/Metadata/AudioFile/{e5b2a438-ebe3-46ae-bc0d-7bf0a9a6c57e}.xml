@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e5b2a438-ebe3-46ae-bc0d-7bf0a9a6c57e}">
+		<property name="assetPath">
+			<value>Bird Chirps/Flute Bird Chirp_03.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>32</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.0912187499999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{504aa506-1a94-4f75-a7b3-90c431f5e27a}</destination>
+		</relationship>
+	</object>
+</objects>

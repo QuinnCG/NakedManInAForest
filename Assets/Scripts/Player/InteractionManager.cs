@@ -130,7 +130,7 @@ namespace Quinn.Player
 
 			// Change playback speed.
 			var item = _inventory.HeldItem;
-			if (item.InteractionType == _interactable.InteractionType)
+			if (item != null && item.InteractionType == _interactable.InteractionType)
 			{
 				_animator.Speed = item.InteractPlaybackFactor;
 			}
