@@ -1,3 +1,6 @@
+using DG.Tweening;
+using FMODUnity;
+using Sirenix.OdinInspector;
 using System;
 using UnityEngine;
 
@@ -5,11 +8,17 @@ namespace Quinn.Player
 {
 	public class InventoryManager : MonoBehaviour
 	{
-		[SerializeField]
+		[SerializeField, Required]
 		private Item EmptyHand;
+
+		[SerializeField, Required]
+		private SpriteRenderer HeldItemSprite;
 
 		[field: SerializeField]
 		public int SlotCount { get; private set; } = 6;
+
+		[SerializeField]
+		private EventReference EquipSound, DequipSound;
 
 		public Item HeldItem
 		{
@@ -30,6 +39,7 @@ namespace Quinn.Player
 		private void Awake()
 		{
 			_inventory = new Slot[SlotCount];
+			HeldItemSprite.sprite = null;
 		}
 
 		private void Start()
@@ -64,6 +74,10 @@ namespace Quinn.Player
 				_selectedSlot = -1;
 				OnSelect?.Invoke(-1);
 
+				HeldItemSprite.sprite = null;
+				Jiggle();
+				RuntimeManager.PlayOneShot(DequipSound, transform.position);
+
 				return;
 			}
 
@@ -85,6 +99,10 @@ namespace Quinn.Player
 					var slot = GetAt(index);
 					HeldItem = slot.Item;
 
+					HeldItemSprite.sprite = slot.Item.Sprite;
+					Jiggle();
+					RuntimeManager.PlayOneShot(EquipSound, transform.position);
+
 					OnSelect(index);
 				}
 			}
@@ -98,6 +116,33 @@ namespace Quinn.Player
 		public void Set(int i, Slot slot)
 		{
 			_inventory[i] = slot;
+		}
+
+		private void Jiggle()
+		{
+			transform.DOKill();
+			transform.localScale = Vector3.one;
+
+			var tween = DOTween.Sequence(transform);
+			tween.Append(transform.DOScaleY(0.8f, 0.2f).SetEase(Ease.OutBounce));
+			tween.Append(transform.DOScaleY(1f, 0.2f));
+
+			DOTween.To(() => transform.localScale.y, value =>
+			{
+				var scale = transform.localScale;
+				scale.y = value;
+
+				float sign = Mathf.Sign(scale.x);
+				float abs = Mathf.Abs(scale.x);
+
+				abs = value;
+				scale.x = abs * sign;
+
+				transform.localScale = scale;
+			}, 0.9f, 0.08f)
+				.SetTarget(transform)
+				.SetEase(Ease.Linear)
+				.SetLoops(2, LoopType.Yoyo);
 		}
 
 		public Slot GetAt(int index)

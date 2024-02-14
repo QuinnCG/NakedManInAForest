@@ -115,7 +115,9 @@ namespace Quinn.Player
 			{
 				dst = Vector2.Distance(transform.position, target);
 
+				_movement.FaceDirection(Mathf.Sign(target.x - transform.position.x));
 				_movement.MoveTowards(target);
+
 				yield return null;
 			}
 
