@@ -79,6 +79,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{72b2e769-2e02-466e-acb9-19e9e321d208}">
+		<property name="volume">
+			<value>-3.5</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{ba2a9356-197b-4b86-870a-2c44fddc5867}</destination>
 		</relationship>
@@ -92,6 +95,9 @@
 	<object class="SingleSound" id="{41028619-5fec-49a2-848a-c51136e0c376}">
 		<property name="length">
 			<value>138.10356009070296</value>
+		</property>
+		<property name="volume">
+			<value>-5</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{c08eff14-0c92-4b74-b9dc-66a37f53d821}</destination>
@@ -123,7 +129,7 @@
 			<value>195</value>
 		</property>
 		<property name="maximumScatterDistance">
-			<value>5.80000019</value>
+			<value>9.19999981</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{be60da7a-2be6-4f82-a1f8-12caa719e38d}</destination>

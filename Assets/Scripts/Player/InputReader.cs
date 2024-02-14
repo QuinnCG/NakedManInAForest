@@ -21,7 +21,7 @@ namespace Quinn.Player
 		{
 			Move.Enable();
 			Interact.Enable();
-			Dash.Enable(); 
+			//Dash.Enable(); 
 			Inventory.Enable();
 		}
 
@@ -29,7 +29,7 @@ namespace Quinn.Player
 		{
 			Move.Disable();
 			Interact.Disable();
-			Dash.Disable();
+			//Dash.Disable();
 			Inventory.Disable();
 		}
 	}
