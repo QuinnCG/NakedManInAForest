@@ -24,7 +24,7 @@ namespace Quinn.Player
 		private Movement _movement;
 		private InteractionManager _interaction;
 
-		private float _lastVel;
+		private bool _wasMoving;
 
 		public Vector2 Direction => _direction;
 
@@ -60,10 +60,12 @@ namespace Quinn.Player
 		{
 			_interaction.CancelInteraction();
 
-			if (_lastVel == 0f)
+			if (!_wasMoving)
 			{
 				RuntimeManager.PlayOneShot(StartMoveSound, transform.position);
 			}
+
+			_wasMoving = _movement.Velocity.sqrMagnitude > 0f;
 		}
 
 		private void UpdateMove()

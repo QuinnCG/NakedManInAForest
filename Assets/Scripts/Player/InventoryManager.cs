@@ -8,8 +8,8 @@ namespace Quinn.Player
 		[SerializeField]
 		private Item EmptyHand;
 
-		[SerializeField]
-		private int SlotCount = 6;
+		[field: SerializeField]
+		public int SlotCount { get; private set; } = 6;
 
 		public Item HeldItem
 		{

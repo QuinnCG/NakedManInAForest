@@ -78,7 +78,7 @@ ScriptedImporter:
     defaultPivotAlignment: 9
     customPivotPosition: {x: 0.45, y: 0.5}
     mosaicPadding: 4
-    spritePadding: 0
+    spritePadding: 2
     generateModelPrefab: 1
     generateAnimationClips: 0
     addSortingGroup: 1
@@ -91,13 +91,13 @@ ScriptedImporter:
     defaultPivotAlignment: 9
     customPivotPosition: {x: 0.45, y: 0.5}
     mosaicPadding: 4
-    spritePadding: 0
+    spritePadding: 2
     generateModelPrefab: 1
     generateAnimationClips: 0
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638434239657260757
+  platformSettingsDirtyTick: 638434371125909172
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -128,10 +128,10 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 16
-      y: 14
-      width: 1
-      height: 2
+      x: 18
+      y: 28
+      width: 3
+      height: 4
     spriteID: 690ee18b9f4e9f346ad744d03264176b
     spriteBone: []
     spriteOutline: []
@@ -140,7 +140,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 16, y: 14}
+    uvTransform: {x: 18, y: 28}
   - name: Stone Axe
     originalName: 
     pivot: {x: 0.29999995, y: 0.4}
@@ -149,9 +149,9 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 42
-      width: 2
-      height: 5
+      y: 48
+      width: 4
+      height: 7
     spriteID: f0eef5ea322d0d24eb72745dc92fffdb
     spriteBone: []
     spriteOutline: []
@@ -160,7 +160,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 42}
+    uvTransform: {x: 4, y: 48}
   - name: Iron Axe
     originalName: 
     pivot: {x: 0.19999997, y: 0.4}
@@ -169,9 +169,9 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 16
-      width: 3
-      height: 5
+      y: 18
+      width: 5
+      height: 7
     spriteID: 6686333b432bfa142b2c90b64ef65b12
     spriteBone: []
     spriteOutline: []
@@ -180,7 +180,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 16}
+    uvTransform: {x: 4, y: 18}
   - name: Copper Axe
     originalName: 
     pivot: {x: 0.19999997, y: 0.4}
@@ -189,9 +189,9 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 29
-      width: 3
-      height: 5
+      y: 33
+      width: 5
+      height: 7
     spriteID: 64e6577195d8f6d4fb3edfb0939d5525
     spriteBone: []
     spriteOutline: []
@@ -200,7 +200,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 29}
+    uvTransform: {x: 4, y: 33}
   - name: Stick
     originalName: 
     pivot: {x: 0.39999998, y: 0.5}
@@ -208,10 +208,10 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 55
-      width: 4
-      height: 2
+      x: 18
+      y: 4
+      width: 6
+      height: 4
     spriteID: c2e288f470513a44b86178d3bea72e82
     spriteBone: []
     spriteOutline: []
@@ -220,7 +220,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 55}
+    uvTransform: {x: 18, y: 4}
   - name: Log
     originalName: 
     pivot: {x: 0.39999998, y: 0.5}
@@ -230,8 +230,8 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 4
-      height: 4
+      width: 6
+      height: 6
     spriteID: 7448c2e70a731e046a01ac9692799e84
     spriteBone: []
     spriteOutline: []
@@ -248,10 +248,10 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 16
-      y: 4
-      width: 3
-      height: 2
+      x: 18
+      y: 16
+      width: 5
+      height: 4
     spriteID: a4423f58305097940873a59f5b85d37b
     spriteBone: []
     spriteOutline: []
@@ -260,7 +260,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 16, y: 4}
+    uvTransform: {x: 18, y: 16}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
