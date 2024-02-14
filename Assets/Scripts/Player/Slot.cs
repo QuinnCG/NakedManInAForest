@@ -4,7 +4,7 @@
 	public class Slot
 	{
 		public Item Item;
-		public int Count;
-		public int RemainingUses;
+		public int Count = 1;
+		public int RemainingUses = -1;
 	}
 }

@@ -21,13 +21,68 @@ namespace Quinn.Player
 		}
 
 		public event Action OnChanged;
+		public event Action<int> OnSelect;
 
+		private int _selectedSlot = -1;
 		private Item _heldItem;
 		private Slot[] _inventory;
 
 		private void Awake()
 		{
 			_inventory = new Slot[SlotCount];
+		}
+
+		private void Start()
+		{
+			Reconstruct();
+		}
+
+		private void Update()
+		{
+			void UpdateForIndex(int index)
+			{
+				if (Input.GetKeyDown(KeyCode.Alpha1 + index))
+				{
+					Select(index);
+				}
+			}
+
+			UpdateForIndex(0);
+			UpdateForIndex(1);
+			UpdateForIndex(2);
+			UpdateForIndex(3);
+			UpdateForIndex(4);
+			UpdateForIndex(5);
+
+			if (Input.GetKeyDown(KeyCode.Escape))
+			{
+				Select(-1);
+			}
+		}
+
+		public void Select(int index)
+		{
+			if (_selectedSlot != index)
+			{
+				if (index == -1)
+				{
+					OnSelect?.Invoke(-1);
+					HeldItem = null;
+					_selectedSlot = -1;
+
+					return;
+				}
+
+				_selectedSlot = index;
+
+				if (index > -1)
+				{
+					var slot = GetAt(index);
+					HeldItem = slot?.Item;
+				}
+
+				OnSelect(index);
+			}
 		}
 
 		public void Set(int i, Slot slot)
@@ -102,6 +157,11 @@ namespace Quinn.Player
 
 		public bool Add(Item item, int count, int uses = -1)
 		{
+			if (item == null || count  <= 0)
+			{
+				throw new NullReferenceException($"Failed to add item '{item}'!");
+			}
+
 			int remaining = count;
 
 			while (remaining > 0 && !IsFull())
@@ -154,6 +214,11 @@ namespace Quinn.Player
 
 		public bool Remove(Item item, int count)
 		{
+			if (item == null || count <= 0)
+			{
+				throw new NullReferenceException($"Failed to remove item '{item}'!");
+			}
+
 			int index = IndexOf(item);
 			if (index == -1) return false;
 
