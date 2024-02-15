@@ -1,7 +1,10 @@
 using DG.Tweening;
 using FMODUnity;
+using Game;
+using JetBrains.Annotations;
 using Sirenix.OdinInspector;
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Quinn.Player
@@ -216,21 +219,45 @@ namespace Quinn.Player
 
 			int remaining = count;
 
+			const int maxAttempts = 1000;
+			int attempts = 0;
+
 			while (remaining > 0 && !IsFull())
 			{
-				int index = IndexOf(item);
+				attempts++;
+
+				if (attempts >= maxAttempts)
+				{
+					throw new Exception($"Failed to add item to inventory after {maxAttempts} attempts!");
+				}
+
+
+				// Find valid slot to add too or fail.
+				int existingSlotIndex = -1;
+
+				for (int i = 0; i < SlotCount; i++)
+				{
+					var s = GetAt(i);
+					if (s == null) continue;
+
+					if (s.Item != null && s.Item == item && s.Count < item.MaxStack)
+					{
+						existingSlotIndex = i;
+					}
+				}
+
 
 				// Add to existing slot.
-				if (index > -1)
+				if (existingSlotIndex > -1)
 				{
-					var slot = _inventory[index];
+					var slot = _inventory[existingSlotIndex];
 
 					int stack = slot.Count;
 					int emptyStackSpace = item.MaxStack - stack;
 					int toAdd = Mathf.Min(emptyStackSpace, remaining);
 
 					// Average uses.
-					if (uses > -1)
+					if (uses > -1 && item.MaxUses > -1)
 					{
 						float a = (float)slot.RemainingUses / item.MaxUses;
 						float b = (float)uses / item.MaxUses;
@@ -258,6 +285,7 @@ namespace Quinn.Player
 
 					remaining -= toAdd;
 				}
+
 			}
 
 			Reconstruct();

@@ -107,11 +107,11 @@ namespace Quinn.WorldGeneration
 		{
 			GroundTilemap.SetTile(new Vector3Int(x, y), GrassTile);
 
-			float chance = Random.value;
-
 			foreach (var spawn in ResourceSpawns)
 			{
-				if (spawn.Chance > chance)
+				float chance = Random.value;
+
+				if (chance < spawn.Chance)
 				{
 					Vector2 pos = GroundTilemap.transform.position;
 					pos += new Vector2(x, y);

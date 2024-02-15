@@ -13,7 +13,7 @@ namespace Quinn.Player
 
 		public void Interact()
 		{
-			_interaction.Interact();
+			_interaction.InteractAnim();
 		}
 	}
 }

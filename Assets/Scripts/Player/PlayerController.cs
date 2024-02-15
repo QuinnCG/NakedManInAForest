@@ -70,6 +70,11 @@ namespace Quinn.Player
 				UpdateMove();
 				_animator.Play(_movement.IsMoving ? MoveAnim : IdleAnim);
 			}
+
+			if (!_interaction.IsInteracting && _input.Interact.IsPressed())
+			{
+				_interaction.InteractWithNearest();
+			}
 		}
 
 		private void OnStartMove()

@@ -44,15 +44,17 @@ namespace Quinn
 
 		public void Interact(GameObject player)
 		{
-			if (!PickUpSound.IsNull)
-			{
-				RuntimeManager.PlayOneShot(PickUpSound);
-			}
-
 			var inventory = player.GetComponent<InventoryManager>();
-			inventory.Add(ItemData.Item, ItemData.Count, ItemData.RemainingUses);
 
-			Destroy(gameObject);
+			if (inventory.Add(ItemData.Item, ItemData.Count, ItemData.RemainingUses))
+			{
+				if (!PickUpSound.IsNull)
+				{
+					RuntimeManager.PlayOneShot(PickUpSound);
+				}
+
+				Destroy(gameObject);
+			}
 		}
 	}
 }

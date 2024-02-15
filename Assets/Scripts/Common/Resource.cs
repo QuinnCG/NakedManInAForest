@@ -67,7 +67,7 @@ namespace Quinn
 				RuntimeManager.PlayOneShot(HitSound, transform.position);
 			}
 
-			if (Random.value < 0.3f)
+			if (Random.value < 0.33f)
 			{
 				SpawnRandomItem();
 			}

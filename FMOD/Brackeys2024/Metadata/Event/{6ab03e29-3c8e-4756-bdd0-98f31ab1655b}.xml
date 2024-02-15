@@ -5,7 +5,7 @@
 			<value>Marimba Pick Up</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{ecd5c504-4b78-4280-bea6-3e3d31f995bb}</destination>
@@ -110,7 +110,6 @@
 	<object class="MixerBusEffectChain" id="{8cbad93b-5f97-43d0-bdf3-b2e0410f7bfb}">
 		<relationship name="effects">
 			<destination>{d2c0f438-94a9-437a-a3b5-c759e9aba4ab}</destination>
-			<destination>{b12496ea-8c33-4ad5-95e7-9745374ebe6a}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{8b001f16-9165-473a-bdef-9add6ad9cec0}" />
@@ -124,7 +123,6 @@
 	</object>
 	<object class="MixerBusFader" id="{38f0a86b-f82d-44db-a266-50465142c32d}" />
 	<object class="MixerBusFader" id="{d2c0f438-94a9-437a-a3b5-c759e9aba4ab}" />
-	<object class="SpatialiserEffect" id="{b12496ea-8c33-4ad5-95e7-9745374ebe6a}" />
 	<object class="SingleSound" id="{f6503c30-3dbc-47e3-9111-7238c5663b9e}">
 		<relationship name="audioFile">
 			<destination>{44c711e9-0dd4-4cbf-ac0d-e08aa2d35bc6}</destination>
