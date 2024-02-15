@@ -1,4 +1,5 @@
 using FMODUnity;
+using Quinn.WorldGeneration;
 using Sirenix.OdinInspector;
 using System;
 using UnityEngine;
@@ -46,6 +47,21 @@ namespace Quinn.Player
 		{
 			Cursor.visible = false;
 			Cursor.lockState = CursorLockMode.Locked;
+
+			const int maxAttempts = 10000;
+			int attempts = 0;
+
+			while (!WorldGenerator.Instance.IsGround(transform.position))
+			{
+				Debug.Log("Moving!");
+				transform.position += (Vector3)UnityEngine.Random.insideUnitCircle * 1f;
+
+				attempts++;
+				if (attempts > maxAttempts)
+				{
+					throw new Exception($"Failed to find ground for the player after {maxAttempts} attempts!");
+				}
+			}
 		}
 
 		private void Update()
