@@ -69,7 +69,7 @@ namespace Quinn.UI
 			if (open)
 			{
 				CraftingMenu.transform.DOKill();
-				CraftingMenu.transform.DOScale(0.9f, 0.4f).From().SetEase(Ease.OutElastic);
+				CraftingMenu.transform.DOScale(0.95f, 0.4f).From().SetEase(Ease.OutElastic);
 
 				if (!InventoryOpenSound.IsNull)
 				{

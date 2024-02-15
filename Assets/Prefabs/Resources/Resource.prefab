@@ -139,6 +139,20 @@ MonoBehaviour:
   <InteractionType>k__BackingField: 0
   MaxDistance: 0.3
   HitPoints: 16
+  ItemHitGroundSound:
+    Guid:
+      Data1: 2061342908
+      Data2: 1082938773
+      Data3: 1706766761
+      Data4: 1712859317
+    Path: event:/SFX/Viola Pizz Item Thud
+  ItemHitWaterSound:
+    Guid:
+      Data1: 1818245039
+      Data2: 1231171722
+      Data3: -117537119
+      Data4: 1249201938
+    Path: event:/SFX/Viola Pizz Water Splash
   HitSound:
     Guid:
       Data1: 0
@@ -153,4 +167,5 @@ MonoBehaviour:
       Data3: 0
       Data4: 0
     Path: 
+  HealthStages: []
   SpawnEntries: []

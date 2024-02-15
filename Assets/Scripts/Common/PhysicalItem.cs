@@ -18,7 +18,7 @@ namespace Quinn
 
 		public Vector2 InteractPoint => transform.position;
 
-		public float InteractDistance => 0.1f;
+		public float InteractDistance => 0.4f;
 
 		private SpriteRenderer _renderer;
 		private CircleCollider2D _collider;

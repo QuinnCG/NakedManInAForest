@@ -8,7 +8,6 @@ using UnityEngine.AddressableAssets;
 
 namespace Quinn
 {
-
 	public class Resource : MonoBehaviour, IInteractable
 	{
 		[field: SerializeField]
@@ -19,6 +18,9 @@ namespace Quinn
 
 		[SerializeField]
 		private int HitPoints = 16;
+
+		[SerializeField]
+		private EventReference ItemHitGroundSound, ItemHitWaterSound;
 
 		[SerializeField]
 		private EventReference HitSound, DestroySound;
@@ -104,12 +106,16 @@ namespace Quinn
 			var entry = SpawnEntries[index];
 
 			var target = transform.position;
-			target += Random.insideUnitSphere * 3f;
+			target += Random.insideUnitSphere * 2f;
 
 			const string key = "PhysicalItem.prefab";
 			Addressables.InstantiateAsync(key, transform.position, Quaternion.identity).Completed += handle =>
 			{
 				var instance = handle.Result;
+
+				var collider = instance.GetComponent<Collider2D>();
+				collider.enabled = false;
+
 				instance.GetComponent<PhysicalItem>().Set(new Slot()
 				{
 					Item = entry.Item,
@@ -124,6 +130,20 @@ namespace Quinn
 					if (!WorldGenerator.Instance.IsGround(instance.transform.position))
 					{
 						Destroy(instance);
+
+						if (!ItemHitWaterSound.IsNull)
+						{
+							RuntimeManager.PlayOneShot(ItemHitWaterSound, instance.transform.position);
+						}
+					}
+					else
+					{
+						collider.enabled = true;
+
+						if (!ItemHitGroundSound.IsNull)
+						{
+							RuntimeManager.PlayOneShot(ItemHitGroundSound, instance.transform.position);
+						}
 					}
 				};
 			};

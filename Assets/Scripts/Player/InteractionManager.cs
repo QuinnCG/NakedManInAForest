@@ -1,5 +1,4 @@
 ﻿using FMODUnity;
-using Sirenix.OdinInspector;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
@@ -11,16 +10,6 @@ namespace Quinn.Player
 	[RequireComponent(typeof(InventoryManager))]
 	public class InteractionManager : MonoBehaviour
 	{
-		[System.Serializable]
-		public class InteractionAnimation
-		{
-			[HorizontalGroup, LabelText("")]
-			public InteractionType Type;
-
-			[HorizontalGroup, LabelText("")]
-			public AnimationClip Animation;
-		}
-
 		[SerializeField]
 		private float PollRadius = 1.5f;
 
@@ -96,6 +85,7 @@ namespace Quinn.Player
 				StopCoroutine(_interactSequence);
 				IsInteracting = false;
 				_animator.Speed = 1f;
+				_interactSequence = null;
 			}
 		}
 

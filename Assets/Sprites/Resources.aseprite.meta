@@ -163,7 +163,7 @@ ScriptedImporter:
     uvTransform: {x: 42, y: 4}
   - name: Boulder_Frame_2
     originalName: 
-    pivot: {x: 0.4, y: 0.5}
+    pivot: {x: 0.4, y: 0.33333334}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -171,7 +171,7 @@ ScriptedImporter:
       x: 28
       y: 18
       width: 5
-      height: 2
+      height: 3
     spriteID: 0a35ea6910983a240ac20c10ec550668
     spriteBone: []
     spriteOutline: []
@@ -272,7 +272,7 @@ ScriptedImporter:
         x: 14
         y: 7
         width: 5
-        height: 2
+        height: 3
       spriteId: 0a35ea6910983a240ac20c10ec550668
     linkedCells: []
     parentIndex: -1
