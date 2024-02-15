@@ -1,6 +1,8 @@
 ﻿using DG.Tweening;
 using FMODUnity;
 using Quinn.Player;
+using Quinn.WorldGeneration;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -22,12 +24,17 @@ namespace Quinn
 		private EventReference HitSound, DestroySound;
 
 		[SerializeField]
+		private ResourceHealthStage[] HealthStages;
+
+		[SerializeField]
 		private ResourceHarvestSpawnEntry[] SpawnEntries;
 
+		private SpriteRenderer _renderer;
 		private int _hitPoints;
 
 		private void Awake()
 		{
+			_renderer = GetComponent<SpriteRenderer>();
 			_hitPoints = HitPoints;
 		}
 
@@ -62,6 +69,18 @@ namespace Quinn
 			{
 				SpawnRandomItem();
 			}
+
+
+			float percent = (float)_hitPoints / HitPoints;
+
+			foreach (var stage in HealthStages)
+			{
+				if (percent < stage.HealthPercent)
+				{
+					_renderer.sprite = stage.Sprite;
+					break;
+				}
+			}
 		}
 
 		private void OnKill()
@@ -91,10 +110,22 @@ namespace Quinn
 			Addressables.InstantiateAsync(key, transform.position, Quaternion.identity).Completed += handle =>
 			{
 				var instance = handle.Result;
+				instance.GetComponent<PhysicalItem>().Set(new Slot()
+				{
+					Item = entry.Item,
+					Count = Random.Range(entry.MinCount, entry.MaxCount),
+					RemainingUses = entry.Item.MaxUses
+				});
 
-				instance.transform.DOJump(target, Random.Range(1f, 2f), 1, Random.Range(8f, 16f))
+				instance.transform.DOJump(target, Random.Range(1f, 2f), 1, Random.Range(0.5f, 1f))
 				.SetEase(Ease.Linear)
-				.SetSpeedBased();
+				.onComplete += () =>
+				{
+					if (!WorldGenerator.Instance.IsGround(instance.transform.position))
+					{
+						Destroy(instance);
+					}
+				};
 			};
 		}
 	}

@@ -1,4 +1,5 @@
-﻿using Sirenix.OdinInspector;
+﻿using FMODUnity;
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
@@ -35,6 +36,7 @@ namespace Quinn.Player
 		private PlayableAnimator _animator;
 		private Movement _movement;
 		private InventoryManager _inventory;
+		private InputReader _input;
 
 		private IInteractable _interactable;
 		private IEnumerator _interactSequence;
@@ -45,10 +47,13 @@ namespace Quinn.Player
 			_animator = GetComponentInChildren<PlayableAnimator>();
 			_movement = GetComponent<Movement>();
 			_inventory = GetComponent<InventoryManager>();
+			_input = GetComponent<InputReader>();
 		}
 
-		public void PollNearbyInteractables()
+		public void InteractWithNearest()
 		{
+			if (_interactSequence != null) return;
+
 			// Physics cast to find nearby colliders.
 			Vector2 origin = transform.position;
 			int layer = InteractionLayer.value;
@@ -73,7 +78,8 @@ namespace Quinn.Player
 			// If collider is interactable, begin interacting.
 			if (bestTarget != null)
 			{
-				if (bestTarget.GetComponent(typeof(IInteractable)) is IInteractable i)
+				if (bestTarget.GetComponent(typeof(IInteractable)) is IInteractable i
+					&& (i.InteractionType == InteractionType.PickUp || (_inventory.HeldItem != null && _inventory.HeldItem.InteractionType == i.InteractionType)))
 				{
 					_interactable = i;
 
@@ -98,6 +104,16 @@ namespace Quinn.Player
 			if (_interactSequence != null)
 			{
 				_interactable.Interact(gameObject);
+
+				if (_inventory.HeldItem != null)
+				{
+					var sound = _inventory.HeldItem.InteractSound;
+
+					if (!sound.IsNull)
+					{
+						RuntimeManager.PlayOneShot(sound, (_interactable as MonoBehaviour).transform.position);
+					}
+				}
 			}
 		}
 
@@ -144,6 +160,13 @@ namespace Quinn.Player
 			// Cleanup.
 			_animator.Speed = 1f;
 			IsInteracting = false;
+			_interactSequence = null;
+
+			// Check for loop.
+			if (_input.Interact.IsPressed())
+			{
+				InteractWithNearest();
+			}
 		}
 	}
 }

@@ -93,7 +93,7 @@ namespace Quinn.Player
 
 		private void OnInteract()
 		{
-			_interaction.PollNearbyInteractables();
+			_interaction.InteractWithNearest();
 		}
 
 		private void OnDash()

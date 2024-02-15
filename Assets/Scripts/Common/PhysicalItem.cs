@@ -28,7 +28,7 @@ namespace Quinn
 			_renderer = GetComponent<SpriteRenderer>();
 			_collider = GetComponent<CircleCollider2D>();
 
-			if (ItemData != null)
+			if (ItemData != null && ItemData.Item != null)
 			{
 				Set(ItemData);
 			}

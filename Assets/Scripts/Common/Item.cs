@@ -1,3 +1,4 @@
+using FMODUnity;
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,6 +29,9 @@ namespace Quinn
 
 		[ShowIf(nameof(IsEquippable))]
 		public float InteractPlaybackFactor = 1f;
+
+		[ShowIf(nameof(IsEquippable))]
+		public EventReference InteractSound;
 
 		[Space, HideIf(nameof(IsEquippable))]
 		public bool IsWearable;

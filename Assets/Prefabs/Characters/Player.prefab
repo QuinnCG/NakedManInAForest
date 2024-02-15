@@ -1075,6 +1075,10 @@ MonoBehaviour:
     Animation: {fileID: 7400000, guid: c842b6d820d9c894db89c5e255803606, type: 2}
   - Type: 1
     Animation: {fileID: 7400000, guid: ecc3d2c5ed01ea2499cda4fd81a7aa0f, type: 2}
+  - Type: 3
+    Animation: {fileID: 7400000, guid: 20e3e199e795d7e42887edfb351d86a5, type: 2}
+  - Type: 2
+    Animation: {fileID: 7400000, guid: ecc3d2c5ed01ea2499cda4fd81a7aa0f, type: 2}
 --- !u!114 &5004678095440556209
 MonoBehaviour:
   m_ObjectHideFlags: 0

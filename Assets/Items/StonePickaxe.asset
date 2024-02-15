@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4e5ab351eaa5fb44825c8ca7ce1c38f, type: 3}
+  m_Name: StonePickaxe
+  m_EditorClassIdentifier: 
+  DisplayName: Stone Pickaxe
+  Description: A crude but effective mining tool.
+  Sprite: {fileID: 8619609589366200956, guid: cedf947c76a88b54e82b6145d61a90c8, type: 3}
+  MaxStack: 1
+  MaxUses: 16
+  IsEquippable: 1
+  InteractionType: 3
+  InteractPlaybackFactor: 0.8
+  InteractSound:
+    Guid:
+      Data1: -1626462691
+      Data2: 1304568921
+      Data3: 1808541572
+      Data4: 1632589125
+    Path: event:/SFX/Bassoon Mine
+  IsWearable: 0
+  AttireType: 0
+  DamageReduction: 0

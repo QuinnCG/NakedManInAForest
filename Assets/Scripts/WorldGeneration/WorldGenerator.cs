@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -26,6 +27,11 @@ namespace Quinn.WorldGeneration
 		[SerializeField]
 		private float Diameter = 95f;
 
+		[SerializeField]
+		private ResourceSpawnEntry[] ResourceSpawns;
+
+		private readonly List<GameObject> _resources = new();
+
 		private void Awake()
 		{
 			Instance = this;
@@ -41,10 +47,12 @@ namespace Quinn.WorldGeneration
 		}
 
 		[Button("Regenerate")]
-		private void Generate()
+		public void Generate()
 		{
 			GroundTilemap.ClearAllTiles();
 			BarrierTilemap.ClearAllTiles();
+
+			ClearAll();
 
 			int half = Size / 2;
 			float scale = Scale;
@@ -75,9 +83,45 @@ namespace Quinn.WorldGeneration
 			Refresh();
 		}
 
+		[Button("Clear")]
+		public void ClearAll()
+		{
+			foreach (var resource in _resources)
+			{
+#if UNITY_EDITOR
+				DestroyImmediate(resource);
+#else
+				Destroy(resource);
+#endif
+			}
+
+			_resources.Clear();
+
+			GroundTilemap.ClearAllTiles();
+			BarrierTilemap.ClearAllTiles();
+
+			Refresh();
+		}
+
 		private void SetGround(int x, int y)
 		{
 			GroundTilemap.SetTile(new Vector3Int(x, y), GrassTile);
+
+			float chance = Random.value;
+
+			foreach (var spawn in ResourceSpawns)
+			{
+				if (spawn.Chance > chance)
+				{
+					Vector2 pos = GroundTilemap.transform.position;
+					pos += new Vector2(x, y);
+
+					var instance = Instantiate(spawn.Prefab, pos, Quaternion.identity, transform);
+					_resources.Add(instance);
+
+					break;
+				}
+			}
 		}
 
 		private void SetBarrier(int x, int y)
@@ -88,6 +132,7 @@ namespace Quinn.WorldGeneration
 		private void Refresh()
 		{
 			GroundTilemap.RefreshAllTiles();
+			BarrierTilemap.RefreshAllTiles();
 		}
 	}
 }

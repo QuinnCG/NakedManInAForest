@@ -16,10 +16,17 @@ MonoBehaviour:
   Description: A crude but effective chopping tool.
   Sprite: {fileID: 7253819879580863142, guid: cedf947c76a88b54e82b6145d61a90c8, type: 3}
   MaxStack: 1
-  MaxUses: 64
+  MaxUses: 32
   IsEquippable: 1
   InteractionType: 2
   InteractPlaybackFactor: 0.8
+  InteractSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   IsWearable: 0
   AttireType: 0
   DamageReduction: 0
