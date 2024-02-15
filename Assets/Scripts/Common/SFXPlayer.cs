@@ -12,14 +12,7 @@ namespace Quinn
 				name = $"event:/SFX/{name}";
 			}
 
-			var sound = EventReference.Find(name);
-
-			if (sound.IsNull)
-			{
-				throw new System.NullReferenceException($"Cannot find event by the name: {name}!");
-			}
-
-			RuntimeManager.PlayOneShot(sound, transform.position);
+			RuntimeManager.PlayOneShot(name, transform.position);
 		}
 
 		public void PlaySoundAttached(string name)
@@ -29,14 +22,7 @@ namespace Quinn
 				name = $"event:/SFX/{name}";
 			}
 
-			var sound = EventReference.Find(name);
-
-			if (sound.IsNull)
-			{
-				throw new System.NullReferenceException($"Cannot find event by the name: {name}!");
-			}
-
-			RuntimeManager.PlayOneShotAttached(sound, gameObject);
+			RuntimeManager.PlayOneShotAttached(name, gameObject);
 		}
 	}
 }

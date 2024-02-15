@@ -19,8 +19,13 @@ namespace Quinn.Player
 
 		public Item HeldItem { get; private set; }
 
+		public bool IsInventoryOpen { get; private set; }
+
 		public event Action OnChanged;
 		public event Action<int> OnSelect;
+		public event Action<bool> OnToggleInventory;
+
+		private InputReader _input;
 
 		private int _selectedSlot = -1;
 		private Slot[] _inventory;
@@ -29,6 +34,9 @@ namespace Quinn.Player
 		{
 			_inventory = new Slot[SlotCount];
 			HeldItemSprite.sprite = null;
+
+			_input = GetComponent<InputReader>();
+			_input.Inventory.performed += _ => ToggleInventory();
 		}
 
 		private void Start()
@@ -306,6 +314,28 @@ namespace Quinn.Player
 		private void Reconstruct()
 		{
 			OnChanged?.Invoke();
+		}
+
+		private void ToggleInventory()
+		{
+			if (IsInventoryOpen)
+			{
+				IsInventoryOpen = false;
+
+				Cursor.lockState = CursorLockMode.Locked;
+				Cursor.visible = false;
+
+				OnToggleInventory?.Invoke(false);
+			}
+			else
+			{
+				IsInventoryOpen = true;
+
+				Cursor.lockState = CursorLockMode.None;
+				Cursor.visible = true;
+
+				OnToggleInventory?.Invoke(true);
+			}
 		}
 	}
 }

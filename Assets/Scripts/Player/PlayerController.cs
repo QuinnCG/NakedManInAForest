@@ -53,7 +53,6 @@ namespace Quinn.Player
 
 			while (!WorldGenerator.Instance.IsGround(transform.position))
 			{
-				Debug.Log("Moving!");
 				transform.position += (Vector3)UnityEngine.Random.insideUnitCircle * 1f;
 
 				attempts++;

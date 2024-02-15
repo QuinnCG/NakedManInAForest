@@ -2,7 +2,6 @@ using Quinn.Player;
 using Sirenix.OdinInspector;
 using System;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace Quinn.UI
 {
@@ -10,6 +9,9 @@ namespace Quinn.UI
 	{
 		[SerializeField, Required]
 		private InventoryManager Inventory;
+
+		[SerializeField, Required]
+		private GameObject CraftingMenu;
 
 		[SerializeField, Required]
 		private Transform Hotbar;
@@ -26,6 +28,8 @@ namespace Quinn.UI
 			{
 				Slots[i] = Hotbar.GetChild(i).GetComponent<SlotUI>();
 			}
+
+			Inventory.OnToggleInventory += OnToggleInventory;
 		}
 
 		private void UpdateSlots()
@@ -51,6 +55,11 @@ namespace Quinn.UI
 			{
 				Slots[index].SetSelected(true);
 			}
+		}
+
+		private void OnToggleInventory(bool open)
+		{
+			CraftingMenu.SetActive(open);
 		}
 	}
 }
