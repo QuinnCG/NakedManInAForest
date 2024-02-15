@@ -1,3 +1,5 @@
+using DG.Tweening;
+using FMODUnity;
 using Quinn.Player;
 using Sirenix.OdinInspector;
 using System;
@@ -15,6 +17,9 @@ namespace Quinn.UI
 
 		[SerializeField, Required]
 		private Transform Hotbar;
+
+		[SerializeField]
+		private EventReference InventoryOpenSound, InventoryCloseSound;
 
 		private SlotUI[] Slots;
 
@@ -60,6 +65,24 @@ namespace Quinn.UI
 		private void OnToggleInventory(bool open)
 		{
 			CraftingMenu.SetActive(open);
+
+			if (open)
+			{
+				CraftingMenu.transform.DOKill();
+				CraftingMenu.transform.DOScale(0.9f, 0.4f).From().SetEase(Ease.OutElastic);
+
+				if (!InventoryOpenSound.IsNull)
+				{
+					RuntimeManager.PlayOneShot(InventoryOpenSound);
+				}
+			}
+			else
+			{
+				if (!InventoryCloseSound.IsNull)
+				{
+					RuntimeManager.PlayOneShot(InventoryCloseSound);
+				}
+			}
 		}
 	}
 }
