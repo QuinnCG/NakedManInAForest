@@ -648,21 +648,21 @@ MonoBehaviour:
   m_CastsShadows: 1
   m_SelfShadows: 0
   m_AlphaCutoff: 0.1
-  m_ApplyToSortingLayers: 0000000057a28eba
+  m_ApplyToSortingLayers: a1fedbc80000000057a28eba
   m_ShapePath:
-  - {x: -0.25, y: 0, z: 0}
-  - {x: -0.24718669, y: 0.49960005, z: 0}
-  - {x: -0.1306727, y: 0.5056145, z: 0}
-  - {x: -0.1306727, y: 0.75882757, z: 0}
-  - {x: 0.13183403, y: 0.7612537, z: 0}
-  - {x: 0.13379422, y: 0.5056145, z: 0}
-  - {x: 0.26040083, y: 0.5056145, z: 0}
-  - {x: 0.25, y: 0, z: 0}
-  - {x: 0.12535396, y: -0.00081181526, z: 0}
-  - {x: 0.11409989, y: 0.12016773, z: 0}
-  - {x: -0.11660528, y: 0.12298131, z: 0}
-  - {x: -0.12223244, y: -0.009252429, z: 0}
-  m_ShapePathHash: -2053433599
+  - {x: -0.23992455, y: 0.01007545, z: 0}
+  - {x: -0.24095109, y: 0.49059308, z: 0}
+  - {x: -0.115430206, y: 0.49314344, z: 0}
+  - {x: -0.116815895, y: 0.73942816, z: 0}
+  - {x: 0.11451301, y: 0.74116147, z: 0}
+  - {x: 0.11227502, y: 0.49808276, z: 0}
+  - {x: 0.24456804, y: 0.48978174, z: 0}
+  - {x: 0.2384853, y: 0.005757332, z: 0}
+  - {x: 0.13542935, y: 0.007824302, z: 0}
+  - {x: 0.1256147, y: 0.13312185, z: 0}
+  - {x: -0.13099873, y: 0.13737476, z: 0}
+  - {x: -0.1308685, y: 0.010898352, z: 0}
+  m_ShapePathHash: 836213700
   m_InstanceId: 0
   m_ShadowShape2DComponent: {fileID: 0}
   m_ShadowShape2DProvider:
@@ -671,8 +671,8 @@ MonoBehaviour:
   m_ShadowMesh:
     m_Mesh: {fileID: 0}
     m_LocalBounds:
-      m_Center: {x: 0.005200416, y: 0.37600064, z: 0}
-      m_Extent: {x: 0.25520042, y: 0.38525307, z: 0}
+      m_Center: {x: 0.0018084645, y: 0.3734594, z: 0}
+      m_Extent: {x: 0.24275956, y: 0.36770207, z: 0}
     m_EdgeProcessing: 1
     m_TrimEdge: 0.02
     m_FlipX: 0
@@ -762,7 +762,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.29047364}
+  m_Offset: {x: 0, y: 0.19701993}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -772,7 +772,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.29591286, y: 0.438635}
+  m_Size: {x: 0.46251178, y: 0.3599373}
   m_EdgeRadius: 0.05
 --- !u!50 &3831804688997634
 Rigidbody2D:

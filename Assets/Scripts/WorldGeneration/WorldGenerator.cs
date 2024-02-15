@@ -115,6 +115,7 @@ namespace Quinn.WorldGeneration
 				{
 					Vector2 pos = GroundTilemap.transform.position;
 					pos += new Vector2(x, y);
+					pos += Vector2.one * 0.5f;
 
 					var instance = Instantiate(spawn.Prefab, pos, Quaternion.identity, transform);
 					_resources.Add(instance);

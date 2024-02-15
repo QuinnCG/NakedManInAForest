@@ -148,8 +148,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 19
-      y: 36
+      x: 42
+      y: 4
       width: 7
       height: 5
     spriteID: e47e77adee42bd24d973d1c3aaffab36
@@ -160,7 +160,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 19, y: 36}
+    uvTransform: {x: 42, y: 4}
   - name: Boulder_Frame_2
     originalName: 
     pivot: {x: 0.4, y: 0.5}
@@ -168,8 +168,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 19
-      y: 49
+      x: 28
+      y: 18
       width: 5
       height: 2
     spriteID: 0a35ea6910983a240ac20c10ec550668
@@ -180,7 +180,27 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 19, y: 49}
+    uvTransform: {x: 28, y: 18}
+  - name: Iron Ore
+    originalName: 
+    pivot: {x: 0.42857146, y: 0.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 52
+      width: 7
+      height: 8
+    spriteID: 4266254222bc22344ac2a4d61d613a21
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 52}
   - name: Tree_Frame_0
     originalName: 
     pivot: {x: 0.4375, y: 0.041666668}
@@ -192,7 +212,7 @@ ScriptedImporter:
       y: 4
       width: 16
       height: 24
-    spriteID: 9b04f9f1318d00e42a7408bd4dedcf58
+    spriteID: 9470b4c421e22f04da7035db9723e4df
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -208,11 +228,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 52
+      x: 28
+      y: 4
       width: 6
       height: 6
-    spriteID: b57cc88713868de4aa378be421f3d661
+    spriteID: fcf180b11acc1434ea19d3321bf96412
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -220,7 +240,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 52}
+    uvTransform: {x: 28, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -257,9 +277,26 @@ ScriptedImporter:
     linkedCells: []
     parentIndex: -1
   - layerIndex: 1
-    guid: 780980727
+    guid: -1118158319
+    name: Iron Ore
+    layerFlags: 2
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Iron Ore
+      frameIndex: 0
+      cellRect:
+        x: 13
+        y: 7
+        width: 7
+        height: 8
+      spriteId: 4266254222bc22344ac2a4d61d613a21
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 2
+    guid: 780980724
     name: Tree
-    layerFlags: 3
+    layerFlags: 2
     layerType: 0
     blendMode: 0
     cells:
@@ -270,7 +307,7 @@ ScriptedImporter:
         y: 7
         width: 16
         height: 24
-      spriteId: 9b04f9f1318d00e42a7408bd4dedcf58
+      spriteId: 9470b4c421e22f04da7035db9723e4df
     - name: Tree_Frame_1
       frameIndex: 1
       cellRect:
@@ -278,7 +315,7 @@ ScriptedImporter:
         y: 7
         width: 6
         height: 6
-      spriteId: b57cc88713868de4aa378be421f3d661
+      spriteId: fcf180b11acc1434ea19d3321bf96412
     linkedCells: []
     parentIndex: -1
   platformSettings:
