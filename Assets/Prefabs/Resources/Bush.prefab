@@ -1,0 +1,163 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5481912875028300348
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 883738146636140277, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 883738146636140277, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 5045950191187398154, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5045950191187398154, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5045950191187398154, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5045950191187398154, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5045950191187398154, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5045950191187398154, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5045950191187398154, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5045950191187398154, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5045950191187398154, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5045950191187398154, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5271474284808813490, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_Name
+      value: Bush
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153055207873987881, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7244296402530555626, guid: 0b0ef0fdfbbbd404aba0966568b3edb2, type: 3}
+    - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: HitPoints
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: MaxDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: SpawnChance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: HitSound.Path
+      value: event:/SFX/Boulder Hit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: DestroySound.Path
+      value: event:/SFX/Boulder Destroy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: HitSound.Guid.Data1
+      value: 867444984
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: HitSound.Guid.Data2
+      value: 1177162297
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: HitSound.Guid.Data3
+      value: -683246152
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: HitSound.Guid.Data4
+      value: 1810703850
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: DestroySound.Guid.Data1
+      value: -2079518635
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: DestroySound.Guid.Data2
+      value: 1215412423
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: DestroySound.Guid.Data3
+      value: 657255820
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: DestroySound.Guid.Data4
+      value: -1810780671
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: HealthStages.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: SpawnEntries.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: SpawnEntries.Array.data[0].Item
+      value: 
+      objectReference: {fileID: 11400000, guid: 76ebdafeddf27c045a05a3a74de1185e, type: 2}
+    - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: <InteractionType>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: HealthStages.Array.data[0].Sprite
+      value: 
+      objectReference: {fileID: 8826220905274526587, guid: 0b0ef0fdfbbbd404aba0966568b3edb2, type: 3}
+    - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: HealthStages.Array.data[1].Sprite
+      value: 
+      objectReference: {fileID: -3433800250307296642, guid: 0b0ef0fdfbbbd404aba0966568b3edb2, type: 3}
+    - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: SpawnEntries.Array.data[0].MaxCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: SpawnEntries.Array.data[0].MinCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: HealthStages.Array.data[0].HealthPercent
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: HealthStages.Array.data[1].HealthPercent
+      value: 0.4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}

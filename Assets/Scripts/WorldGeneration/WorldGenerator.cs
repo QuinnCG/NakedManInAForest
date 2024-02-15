@@ -28,6 +28,9 @@ namespace Quinn.WorldGeneration
 		private float Diameter = 95f;
 
 		[SerializeField]
+		private Sprite[] GrassFoliageSprites;
+
+		[SerializeField]
 		private ResourceSpawnEntry[] ResourceSpawns;
 
 		private readonly List<GameObject> _resources = new();
@@ -107,22 +110,30 @@ namespace Quinn.WorldGeneration
 		{
 			GroundTilemap.SetTile(new Vector3Int(x, y), GrassTile);
 
+			Vector2 pos = GroundTilemap.transform.position;
+			pos += new Vector2(x, y);
+			pos += Vector2.one * 0.5f;
+
 			foreach (var spawn in ResourceSpawns)
 			{
 				float chance = Random.value;
 
 				if (chance < spawn.Chance)
 				{
-					Vector2 pos = GroundTilemap.transform.position;
-					pos += new Vector2(x, y);
-					pos += Vector2.one * 0.5f;
-
 					var instance = Instantiate(spawn.Prefab, pos, Quaternion.identity, transform);
 					_resources.Add(instance);
 
-					break;
+					return;
 				}
 			}
+
+			//var sprite = GrassFoliageSprites[Random.Range(0, GrassFoliageSprites.Length)];
+			//var foliage = new GameObject("Foliage");
+			//var r = foliage.AddComponent<SpriteRenderer>();
+			//r.sprite = sprite;
+			//r.sortingLayerName = "Ground";
+			//foliage.transform.parent = transform;
+			//foliage.transform.position = pos;
 		}
 
 		private void SetBarrier(int x, int y)

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0b0ef0fdfbbbd404aba0966568b3edb2
+guid: d2af203d63005a54cbdeec2d153383fe
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,11 +72,11 @@ ScriptedImporter:
     applyGammaDecoding: 0
   previousAsepriteImporterSettings:
     fileImportMode: 1
-    importHiddenLayers: 1
+    importHiddenLayers: 0
     layerImportMode: 0
     defaultPivotSpace: 0
-    defaultPivotAlignment: 9
-    customPivotPosition: {x: 0.5, y: 0.25}
+    defaultPivotAlignment: 0
+    customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 0
@@ -85,11 +85,11 @@ ScriptedImporter:
     addShadowCasters: 0
   asepriteImporterSettings:
     fileImportMode: 1
-    importHiddenLayers: 1
+    importHiddenLayers: 0
     layerImportMode: 0
     defaultPivotSpace: 0
-    defaultPivotAlignment: 9
-    customPivotPosition: {x: 0.5, y: 0.25}
+    defaultPivotAlignment: 0
+    customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 0
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638434632994599029
+  platformSettingsDirtyTick: 638436060320737608
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,98 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Boulder
+  - name: Layer 1
     originalName: 
-    pivot: {x: 0.42857146, y: 0.125}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 28
-      y: 19
-      width: 7
-      height: 8
-    spriteID: 9138f13cfd123b44e823f3a534069b45
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 28, y: 19}
-  - name: Boulder_Frame_1
-    originalName: 
-    pivot: {x: 0.42857146, y: 0.2}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 45
-      y: 4
-      width: 7
-      height: 5
-    spriteID: e47e77adee42bd24d973d1c3aaffab36
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 45, y: 4}
-  - name: Boulder_Frame_2
-    originalName: 
-    pivot: {x: 0.4, y: 0.33333334}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 45
-      y: 17
-      width: 5
-      height: 3
-    spriteID: 0a35ea6910983a240ac20c10ec550668
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 45, y: 17}
-  - name: Iron Ore
-    originalName: 
-    pivot: {x: 0.42857146, y: 0.125}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 28
-      y: 35
-      width: 7
-      height: 8
-    spriteID: 4266254222bc22344ac2a4d61d613a21
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 28, y: 35}
-  - name: Tree_Frame_0
-    originalName: 
-    pivot: {x: 0.4375, y: 0.041666668}
+    pivot: {x: 1, y: 1.1666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 16
-      height: 24
-    spriteID: 9470b4c421e22f04da7035db9723e4df
+      width: 8
+      height: 6
+    spriteID: 5d5734f3f044c374b870229a1df8ab95
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -221,18 +141,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Tree_Frame_1
+  - name: Layer 4
     originalName: 
-    pivot: {x: 0.5, y: 0.16666667}
+    pivot: {x: -0.14285715, y: 1.1666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 28
-      y: 51
-      width: 6
+      x: 4
+      y: 18
+      width: 7
       height: 6
-    spriteID: fcf180b11acc1434ea19d3321bf96412
+    spriteID: 5daea86be238ebd4796e1a5b49a6574b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -240,59 +160,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 28, y: 51}
-  - name: Bush
+    uvTransform: {x: 4, y: 18}
+  - name: Layer 3
     originalName: 
-    pivot: {x: 0.44444445, y: 0.14285715}
+    pivot: {x: -0.14285715, y: -0.16666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 36
-      width: 9
-      height: 7
-    spriteID: c1d9d8fde26509440bde427f40d5d984
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 36}
-  - name: Bush_Frame_1
-    originalName: 
-    pivot: {x: 0.44444445, y: 0.14285715}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 51
-      width: 9
-      height: 7
-    spriteID: 9e4bb951df32ffb42a0185b92f0b4198
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 51}
-  - name: Bush_Frame_2
-    originalName: 
-    pivot: {x: 0.44444445, y: 0.14285715}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 28
+      x: 20
       y: 4
-      width: 9
-      height: 7
-    spriteID: b830c4e3df14c804a98fe04d1d6c163b
+      width: 7
+      height: 6
+    spriteID: 60fe04c67bb7f2b45a11c1d67be5ad22
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -300,115 +180,95 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 28, y: 4}
+    uvTransform: {x: 20, y: 4}
+  - name: Layer 2
+    originalName: 
+    pivot: {x: 1.1428572, y: -0.16666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 20
+      y: 18
+      width: 7
+      height: 6
+    spriteID: 0f158f6417002d54b9e76f5337fed05a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 20, y: 18}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1419502089
-    name: Boulder
+    guid: 1317222744
+    name: Layer 1
     layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: Boulder_Frame_0
+    - name: Layer 1
       frameIndex: 0
       cellRect:
-        x: 13
-        y: 7
-        width: 7
-        height: 8
-      spriteId: 9138f13cfd123b44e823f3a534069b45
-    - name: Boulder_Frame_1
-      frameIndex: 1
-      cellRect:
-        x: 13
-        y: 7
-        width: 7
-        height: 5
-      spriteId: e47e77adee42bd24d973d1c3aaffab36
-    - name: Boulder_Frame_2
-      frameIndex: 2
-      cellRect:
-        x: 14
-        y: 7
-        width: 5
-        height: 3
-      spriteId: 0a35ea6910983a240ac20c10ec550668
+        x: 0
+        y: 1
+        width: 8
+        height: 6
+      spriteId: 5d5734f3f044c374b870229a1df8ab95
     linkedCells: []
     parentIndex: -1
   - layerIndex: 1
-    guid: -1118158319
-    name: Iron Ore
-    layerFlags: 2
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: Iron Ore
-      frameIndex: 0
-      cellRect:
-        x: 13
-        y: 7
-        width: 7
-        height: 8
-      spriteId: 4266254222bc22344ac2a4d61d613a21
-    linkedCells: []
-    parentIndex: -1
-  - layerIndex: 2
-    guid: 780980724
-    name: Tree
-    layerFlags: 2
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: Tree_Frame_0
-      frameIndex: 0
-      cellRect:
-        x: 9
-        y: 7
-        width: 16
-        height: 24
-      spriteId: 9470b4c421e22f04da7035db9723e4df
-    - name: Tree_Frame_1
-      frameIndex: 1
-      cellRect:
-        x: 13
-        y: 7
-        width: 6
-        height: 6
-      spriteId: fcf180b11acc1434ea19d3321bf96412
-    linkedCells: []
-    parentIndex: -1
-  - layerIndex: 3
-    guid: 574229471
-    name: Bush
+    guid: 1317223934
+    name: Layer 4
     layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: Bush_Frame_0
+    - name: Layer 4
       frameIndex: 0
       cellRect:
-        x: 12
-        y: 7
-        width: 9
-        height: 7
-      spriteId: c1d9d8fde26509440bde427f40d5d984
-    - name: Bush_Frame_1
-      frameIndex: 1
+        x: 9
+        y: 1
+        width: 7
+        height: 6
+      spriteId: 5daea86be238ebd4796e1a5b49a6574b
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 2
+    guid: 1317221948
+    name: Layer 3
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Layer 3
+      frameIndex: 0
       cellRect:
-        x: 12
-        y: 7
-        width: 9
-        height: 7
-      spriteId: 9e4bb951df32ffb42a0185b92f0b4198
-    - name: Bush_Frame_2
-      frameIndex: 2
+        x: 9
+        y: 9
+        width: 7
+        height: 6
+      spriteId: 60fe04c67bb7f2b45a11c1d67be5ad22
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 3
+    guid: 1317221554
+    name: Layer 2
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Layer 2
+      frameIndex: 0
       cellRect:
-        x: 12
-        y: 7
-        width: 9
-        height: 7
-      spriteId: b830c4e3df14c804a98fe04d1d6c163b
+        x: 0
+        y: 9
+        width: 7
+        height: 6
+      spriteId: 0f158f6417002d54b9e76f5337fed05a
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -439,4 +299,4 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 32, y: 32}
+  canvasSize: {x: 16, y: 16}

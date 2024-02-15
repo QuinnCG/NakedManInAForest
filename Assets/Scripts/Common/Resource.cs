@@ -2,6 +2,7 @@
 using FMODUnity;
 using Quinn.Player;
 using Quinn.WorldGeneration;
+using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -19,17 +20,20 @@ namespace Quinn
 		[SerializeField]
 		private int HitPoints = 16;
 
-		[SerializeField]
-		private EventReference ItemHitGroundSound, ItemHitWaterSound;
-
-		[SerializeField]
-		private EventReference HitSound, DestroySound;
+		[SerializeField, MinValue(0f), MaxValue(1f)]
+		private float SpawnChance = 0.35f;
 
 		[SerializeField]
 		private ResourceHealthStage[] HealthStages;
 
 		[SerializeField]
 		private ResourceHarvestSpawnEntry[] SpawnEntries;
+
+		[SerializeField, BoxGroup("Sounds")]
+		private EventReference ItemHitGroundSound, ItemHitWaterSound;
+
+		[SerializeField, BoxGroup("Sounds")]
+		private EventReference HitSound, DestroySound;
 
 		private SpriteRenderer _renderer;
 		private int _hitPoints;
@@ -38,6 +42,8 @@ namespace Quinn
 		{
 			_renderer = GetComponent<SpriteRenderer>();
 			_hitPoints = HitPoints;
+
+			transform.localScale = new Vector3(Random.value < 0.5f ? -1f : 1f, 1f, 1f);
 		}
 
 		public Vector2 InteractPoint => transform.position;
@@ -67,7 +73,7 @@ namespace Quinn
 				RuntimeManager.PlayOneShot(HitSound, transform.position);
 			}
 
-			if (Random.value < 0.33f)
+			if (Random.value < SpawnChance)
 			{
 				SpawnRandomItem();
 			}
