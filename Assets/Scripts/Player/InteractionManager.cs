@@ -18,6 +18,9 @@ namespace Quinn.Player
 		private LayerMask InteractionLayer;
 
 		[SerializeField]
+		private EventReference PickUpSound;
+
+		[SerializeField]
 		private InteractionAnimation[] InteractionAnimations;
 
 		public bool IsInteracting { get; private set; }
@@ -64,7 +67,7 @@ namespace Quinn.Player
 				}
 			}
 
-			interactables.OrderByDescending(x => Vector2.Distance(transform.position, x.InteractPoint));
+			interactables.OrderBy(x => Vector2.Distance(transform.position, x.InteractPoint));
 
 			// If collider is interactable, begin interacting.
 			while (interactables.Count > 0)
@@ -111,16 +114,17 @@ namespace Quinn.Player
 			if (_interactSequence != null && _interactable != null)
 			{
 				_interactable.Interact(player: gameObject);
+				EventReference sound = PickUpSound;
 
 				if (_inventory.IsEquipped)
 				{
-					var sound = _inventory.HeldItem.InteractSound;
-
-					if (!sound.IsNull)
+					if (_interactable.InteractionType != InteractionType.PickUp)
 					{
-						RuntimeManager.PlayOneShot(sound, (_interactable as MonoBehaviour).transform.position);
+						sound = _inventory.HeldItem.InteractSound;
 					}
 				}
+
+				RuntimeManager.PlayOneShot(sound, (_interactable as MonoBehaviour).transform.position);
 			}
 		}
 

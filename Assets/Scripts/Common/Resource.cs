@@ -43,7 +43,12 @@ namespace Quinn
 			_renderer = GetComponent<SpriteRenderer>();
 			_hitPoints = HitPoints;
 
-			transform.localScale = new Vector3(Random.value < 0.5f ? -1f : 1f, 1f, 1f);
+			transform.rotation = Quaternion.Euler(0f, Random.value < 0.5f ? -180f : 0f, 0f);
+		}
+
+		private void OnDestroy()
+		{
+			transform.DOKill();
 		}
 
 		public Vector2 InteractPoint => transform.position;
@@ -78,9 +83,12 @@ namespace Quinn
 				SpawnRandomItem();
 			}
 
+			transform.DOScale(0.85f, 0.1f).onComplete += () =>
+			{
+				transform.DOScale(1f, 0.1f).SetEase(Ease.OutBack);
+			};
 
 			float percent = (float)_hitPoints / HitPoints;
-
 			foreach (var stage in HealthStages)
 			{
 				if (percent < stage.HealthPercent)

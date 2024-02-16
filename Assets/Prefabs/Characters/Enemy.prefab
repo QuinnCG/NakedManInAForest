@@ -90,7 +90,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!70 &2311726100511712071
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -167,6 +167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9da49b8d1ba5e4541bc8a86f756ffd30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HitPoints: 8
+  AttackRadius: 0.5
+  DamageRadius: 1.5
   IdleAnim: {fileID: 0}
   MoveAnim: {fileID: 0}
   AttackAnim: {fileID: 0}

@@ -1070,6 +1070,13 @@ MonoBehaviour:
   InteractionLayer:
     serializedVersion: 2
     m_Bits: 128
+  PickUpSound:
+    Guid:
+      Data1: 1789935145
+      Data2: 1196833934
+      Data3: -208088899
+      Data4: 1533391130
+    Path: event:/SFX/Marimba Pick Up
   InteractionAnimations:
   - Type: 0
     Animation: {fileID: 7400000, guid: c842b6d820d9c894db89c5e255803606, type: 2}
