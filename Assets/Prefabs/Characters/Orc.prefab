@@ -16,7 +16,31 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.27350637
       objectReference: {fileID: 0}
+    - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
+      propertyPath: HurtAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 40b481cf06ac4814da3b70ad55034e61, type: 2}
+    - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
+      propertyPath: IdleAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 0eaa17369ada6fd489515ea9e988398b, type: 2}
+    - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
+      propertyPath: MoveAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 91c2598f5d4c71a4fa7c9bc9a088a29e, type: 2}
+    - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
+      propertyPath: DeathAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 9aab65be47742bf41ab1b6f48ce374bc, type: 2}
+    - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
+      propertyPath: AttackAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 3e524078dd443ae4189b12ec33192f07, type: 2}
     - target: {fileID: 4251442293016676845, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3366222301331575933, guid: f0a68a2bbc827654c8c80fe73ad233c3, type: 3}
+    - target: {fileID: 5632724630183855547, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -3366222301331575933, guid: f0a68a2bbc827654c8c80fe73ad233c3, type: 3}

@@ -6,8 +6,6 @@ using UnityEngine;
 
 namespace Quinn.AI
 {
-	[RequireComponent(typeof(SpriteRenderer))]
-	[RequireComponent(typeof(PlayableAnimator))]
 	[RequireComponent(typeof(Movement))]
 	public class EnemyController : MonoBehaviour, IFacing, IInteractable
 	{
@@ -15,7 +13,7 @@ namespace Quinn.AI
 		private int HitPoints = 8;
 
 		[SerializeField]
-		private float AttackRadius = 0.5f,DamageRadius = 1.5f;
+		private float AttackRadius = 0.5f, DamageRadius = 1.5f;
 
 		[SerializeField, Required]
 		private AnimationClip IdleAnim, MoveAnim;
@@ -36,7 +34,7 @@ namespace Quinn.AI
 
 		public Vector2 InteractPoint => transform.position;
 
-		public float InteractDistance => 1f;
+		public float InteractDistance => 0.35f;
 
 		private Vector2 _dir = Vector2.right;
 
@@ -50,8 +48,8 @@ namespace Quinn.AI
 
 		private void Awake()
 		{
-			_renderer = GetComponent<SpriteRenderer>();
-			_animator = GetComponent<PlayableAnimator>();
+			_renderer = GetComponentInChildren<SpriteRenderer>();
+			_animator = GetComponentInChildren<PlayableAnimator>();
 			_movement = GetComponent<Movement>();
 
 			_hitPoints = HitPoints;
@@ -130,8 +128,21 @@ namespace Quinn.AI
 			{
 				_isHurting = true;
 
-				_hurtSequence = HurtSequence();
-				StartCoroutine(_hurtSequence);
+				var mat = _renderer.material;
+				DOTween.To(() => mat.GetFloat("_Hurt"), x => mat.SetFloat("_Hurt", x), 1f, 0.1f).onComplete += () =>
+				{
+					DOTween.To(() => mat.GetFloat("_Hurt"), x => mat.SetFloat("_Hurt", x), 0f, 0.1f);
+				};
+
+				if (!_isAttacking)
+				{
+					_hurtSequence = HurtSequence();
+					StartCoroutine(_hurtSequence);
+				}
+				else
+				{
+					_isHurting = false;
+				}
 			}
 		}
 
@@ -151,6 +162,9 @@ namespace Quinn.AI
 			if (!_isDead)
 			{
 				_isDead = true;
+
+				GetComponent<Collider2D>().enabled = false;
+
 				StartCoroutine(DeathSequence());
 			}
 		}
@@ -177,7 +191,7 @@ namespace Quinn.AI
 			yield return new WaitForSeconds(DeathAnim.length);
 
 			yield return new WaitForSeconds(3f);
-			yield return _renderer.DOFade(0f, 3f).WaitForCompletion();
+			yield return _renderer.DOFade(0f, 1f).WaitForCompletion();
 
 			Destroy(gameObject);
 		}
