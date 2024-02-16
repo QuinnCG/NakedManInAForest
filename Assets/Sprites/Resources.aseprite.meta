@@ -128,8 +128,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 28
-      y: 19
+      x: 4
+      y: 81
       width: 7
       height: 8
     spriteID: 9138f13cfd123b44e823f3a534069b45
@@ -140,7 +140,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 28, y: 19}
+    uvTransform: {x: 4, y: 81}
   - name: Boulder_Frame_1
     originalName: 
     pivot: {x: 0.42857146, y: 0.2}
@@ -148,7 +148,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 45
+      x: 42
       y: 4
       width: 7
       height: 5
@@ -160,7 +160,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 45, y: 4}
+    uvTransform: {x: 42, y: 4}
   - name: Boulder_Frame_2
     originalName: 
     pivot: {x: 0.4, y: 0.33333334}
@@ -168,8 +168,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 45
-      y: 17
+      x: 42
+      y: 65
       width: 5
       height: 3
     spriteID: 0a35ea6910983a240ac20c10ec550668
@@ -180,7 +180,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 45, y: 17}
+    uvTransform: {x: 42, y: 65}
   - name: Iron Ore
     originalName: 
     pivot: {x: 0.42857146, y: 0.125}
@@ -188,8 +188,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 28
-      y: 35
+      x: 4
+      y: 97
       width: 7
       height: 8
     spriteID: 4266254222bc22344ac2a4d61d613a21
@@ -200,7 +200,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 28, y: 35}
+    uvTransform: {x: 4, y: 97}
   - name: Tree_Frame_0
     originalName: 
     pivot: {x: 0.4375, y: 0.041666668}
@@ -229,7 +229,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 28
-      y: 51
+      y: 4
       width: 6
       height: 6
     spriteID: fcf180b11acc1434ea19d3321bf96412
@@ -240,7 +240,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 28, y: 51}
+    uvTransform: {x: 28, y: 4}
   - name: Bush
     originalName: 
     pivot: {x: 0.44444445, y: 0.14285715}
@@ -288,8 +288,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 28
-      y: 4
+      x: 4
+      y: 66
       width: 9
       height: 7
     spriteID: b830c4e3df14c804a98fe04d1d6c163b
@@ -300,7 +300,107 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 28, y: 4}
+    uvTransform: {x: 4, y: 66}
+  - name: Iron Ore_Frame_1
+    originalName: 
+    pivot: {x: 0.42857146, y: 0.2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 42
+      y: 17
+      width: 7
+      height: 5
+    spriteID: eeedb462100af5241a4607d123162afd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 42, y: 17}
+  - name: Iron Ore_Frame_2
+    originalName: 
+    pivot: {x: 0.42857146, y: 0.33333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 42
+      y: 43
+      width: 7
+      height: 3
+    spriteID: 9031bc98537bf6846924dfcf43fcdc3f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 42, y: 43}
+  - name: Copper Ore_Frame_0
+    originalName: 
+    pivot: {x: 0.42857146, y: 0.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 113
+      width: 7
+      height: 8
+    spriteID: f8daa6f344533e745b26f1737b407a07
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 113}
+  - name: Copper Ore_Frame_1
+    originalName: 
+    pivot: {x: 0.42857146, y: 0.2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 42
+      y: 30
+      width: 7
+      height: 5
+    spriteID: dca49a8f09ea78342b58c486d88ce222
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 42, y: 30}
+  - name: Copper Ore_Frame_2
+    originalName: 
+    pivot: {x: 0.42857146, y: 0.33333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 42
+      y: 54
+      width: 7
+      height: 3
+    spriteID: e2f0faceb4ac90845a1984d0c63f55fe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 42, y: 54}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -343,7 +443,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Iron Ore
+    - name: Iron Ore_Frame_0
       frameIndex: 0
       cellRect:
         x: 13
@@ -351,6 +451,22 @@ ScriptedImporter:
         width: 7
         height: 8
       spriteId: 4266254222bc22344ac2a4d61d613a21
+    - name: Iron Ore_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 13
+        y: 7
+        width: 7
+        height: 5
+      spriteId: eeedb462100af5241a4607d123162afd
+    - name: Iron Ore_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 13
+        y: 7
+        width: 7
+        height: 3
+      spriteId: 9031bc98537bf6846924dfcf43fcdc3f
     linkedCells: []
     parentIndex: -1
   - layerIndex: 2
@@ -409,6 +525,39 @@ ScriptedImporter:
         width: 9
         height: 7
       spriteId: b830c4e3df14c804a98fe04d1d6c163b
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 4
+    guid: 776719083
+    name: Copper Ore
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Copper Ore_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 13
+        y: 7
+        width: 7
+        height: 8
+      spriteId: f8daa6f344533e745b26f1737b407a07
+    - name: Copper Ore_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 13
+        y: 7
+        width: 7
+        height: 5
+      spriteId: dca49a8f09ea78342b58c486d88ce222
+    - name: Copper Ore_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 13
+        y: 7
+        width: 7
+        height: 3
+      spriteId: e2f0faceb4ac90845a1984d0c63f55fe
     linkedCells: []
     parentIndex: -1
   platformSettings:
