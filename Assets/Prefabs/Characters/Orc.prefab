@@ -40,6 +40,46 @@ PrefabInstance:
       propertyPath: DamageRadius
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
+      propertyPath: HurtSound.Path
+      value: event:/SFX/Cimbasso Hurt
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
+      propertyPath: DeathSound.Path
+      value: event:/SFX/Cimbasso Death
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
+      propertyPath: HurtSound.Guid.Data1
+      value: -1286073857
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
+      propertyPath: HurtSound.Guid.Data2
+      value: 1306837921
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
+      propertyPath: HurtSound.Guid.Data3
+      value: -1325185610
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
+      propertyPath: HurtSound.Guid.Data4
+      value: 1859451147
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
+      propertyPath: DeathSound.Guid.Data1
+      value: 2047028436
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
+      propertyPath: DeathSound.Guid.Data2
+      value: 1080034891
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
+      propertyPath: DeathSound.Guid.Data3
+      value: 1562118840
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
+      propertyPath: DeathSound.Guid.Data4
+      value: 1693536102
+      objectReference: {fileID: 0}
     - target: {fileID: 4251442293016676845, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -94,7 +134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200872822543764182, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
       propertyPath: <MoveSpeed>k__BackingField
-      value: 5
+      value: 4.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -1,4 +1,5 @@
 using DG.Tweening;
+using FMODUnity;
 using Quinn.Player;
 using Sirenix.OdinInspector;
 using System.Collections;
@@ -23,6 +24,9 @@ namespace Quinn.AI
 
 		[SerializeField, Required]
 		private AnimationClip HurtAnim, DeathAnim;
+
+		[SerializeField]
+		private EventReference HurtSound, DeathSound;
 
 		private SpriteRenderer _renderer;
 		private PlayableAnimator _animator;
@@ -128,6 +132,11 @@ namespace Quinn.AI
 			{
 				_isHurting = true;
 
+				if (!HurtSound.IsNull)
+				{
+					RuntimeManager.PlayOneShot(HurtSound, transform.position);
+				}
+
 				var mat = _renderer.material;
 				DOTween.To(() => mat.GetFloat("_Hurt"), x => mat.SetFloat("_Hurt", x), 1f, 0.1f).onComplete += () =>
 				{
@@ -163,8 +172,12 @@ namespace Quinn.AI
 			{
 				_isDead = true;
 
-				GetComponent<Collider2D>().enabled = false;
+				if (!DeathSound.IsNull)
+				{
+					RuntimeManager.PlayOneShot(DeathSound, transform.position);
+				}
 
+				GetComponent<Collider2D>().enabled = false;
 				StartCoroutine(DeathSequence());
 			}
 		}
