@@ -4,6 +4,7 @@ using Quinn.Player;
 using Sirenix.OdinInspector;
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Quinn.UI
 {
@@ -17,6 +18,9 @@ namespace Quinn.UI
 
 		[SerializeField, Required]
 		private Transform Hotbar;
+
+		[SerializeField, Required]
+		private Slider HealthBar;
 
 		[SerializeField]
 		private EventReference InventoryOpenSound, InventoryCloseSound;
@@ -35,6 +39,12 @@ namespace Quinn.UI
 			}
 
 			Inventory.OnToggleInventory += OnToggleInventory;
+		}
+
+		private void Update()
+		{
+			float percent = PlayerController.Instance.HealthPercent;
+			HealthBar.value = percent;
 		}
 
 		private void UpdateSlots()

@@ -2,7 +2,9 @@ using FMODUnity;
 using Quinn.WorldGeneration;
 using Sirenix.OdinInspector;
 using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Quinn.Player
 {
@@ -13,6 +15,9 @@ namespace Quinn.Player
 	{
 		public static PlayerController Instance { get; private set; }
 
+		[SerializeField]
+		private int HitPoints = 20;
+
 		[SerializeField, Required]
 		private AnimationClip IdleAnim;
 
@@ -22,16 +27,19 @@ namespace Quinn.Player
 		[SerializeField]
 		private EventReference StartMoveSound;
 
+		public bool IsDead { get; private set; }
+		public Vector2 Direction => _direction;
+		public float HealthPercent => (float)_hitPoints / HitPoints;
+
 		private PlayableAnimator _animator;
 		private InputReader _input;
 		private Movement _movement;
 		private InteractionManager _interaction;
 
 		private bool _wasMoving;
-
-		public Vector2 Direction => _direction;
-
 		private Vector2 _direction = Vector2.right;
+
+		private int _hitPoints;
 
 		private void Awake()
 		{
@@ -45,6 +53,8 @@ namespace Quinn.Player
 			_input.Move.performed += _ => OnStartMove();
 			_input.Interact.performed += _ => OnInteract();
 			_input.Dash.performed += _ => OnDash();
+
+			_hitPoints = HitPoints;
 		}
 
 		private void Start()
@@ -83,7 +93,14 @@ namespace Quinn.Player
 
 		public void TakeDamage()
 		{
-			Debug.Log("Player has taken damage!");
+			_hitPoints--;
+			_hitPoints = Mathf.Max(0, _hitPoints);
+
+			if (_hitPoints == 0)
+			{
+				IsDead = true;
+				StartCoroutine(DeathSequence());
+			}
 		}
 
 		private void OnStartMove()
@@ -113,6 +130,12 @@ namespace Quinn.Player
 		private void OnDash()
 		{
 			_movement.Dash();
+		}
+
+		private IEnumerator DeathSequence()
+		{
+			yield return new WaitForSeconds(3f);
+			SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
 		}
 	}
 }
