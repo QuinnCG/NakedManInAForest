@@ -21,6 +21,7 @@ namespace Quinn.Player
 		private EventReference EquipSound, DequipSound;
 
 		public Item HeldItem { get; private set; }
+		public bool IsEquipped => HeldItem != null;
 
 		public bool IsInventoryOpen { get; private set; }
 

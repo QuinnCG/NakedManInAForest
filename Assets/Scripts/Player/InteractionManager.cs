@@ -1,5 +1,6 @@
 ﻿using FMODUnity;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -41,48 +42,54 @@ namespace Quinn.Player
 		{
 			if (_interactSequence != null) return;
 
-			IsInteracting = true;
-
 			// Physics cast to find nearby colliders.
 			Vector2 origin = transform.position;
 			int layer = InteractionLayer.value;
 
 			var colliders = Physics2D.OverlapCircleAll(origin, PollRadius, layer);
 
-			GameObject bestTarget = null;
-			float bestDst = float.PositiveInfinity;
+			// Find and sort by nearest.
+			var interactables = new List<IInteractable>();
 
-			// Find closest collider that is interactable.
 			foreach (var collider in colliders)
 			{
-				if (collider.gameObject == gameObject) continue;
-				if (collider.GetComponent(typeof(IInteractable)) == null) continue;
-
-				float dst = Vector2.Distance(origin, collider.transform.position);
-				if (dst < bestDst)
+				if (collider.gameObject == gameObject)
 				{
-					bestTarget = collider.gameObject;
-					bestDst = dst;
+					continue;
+				}
+
+				if (collider.gameObject.GetComponent(typeof(IInteractable)) is IInteractable interactable)
+				{
+					interactables.Add(interactable);
 				}
 			}
 
+			interactables.OrderByDescending(x => Vector2.Distance(transform.position, x.InteractPoint));
+
 			// If collider is interactable, begin interacting.
-			if (bestTarget != null)
+			while (interactables.Count > 0)
 			{
-				if (bestTarget.GetComponent(typeof(IInteractable)) is IInteractable i)
+				var nearest = interactables[0];
+				interactables.RemoveAt(0);
+
+				bool isPickUp = nearest.InteractionType == InteractionType.PickUp;
+				bool isAttack = nearest.InteractionType == InteractionType.Attack;
+
+				bool isCorrectInteractionType = false;
+
+				if (_inventory.IsEquipped)
 				{
-					bool isPickUp = i.InteractionType == InteractionType.PickUp;
+					isCorrectInteractionType = _inventory.HeldItem.InteractionType == nearest.InteractionType;
+				}
 
-					bool isCorrectInteractionType = _inventory.HeldItem != null
-						&& _inventory.HeldItem.InteractionType == i.InteractionType;
+				if (isPickUp || isAttack || isCorrectInteractionType)
+				{
+					_interactable = nearest;
 
-					if (isPickUp || isCorrectInteractionType)
-					{
-						_interactable = i;
+					_interactSequence = InteractSequence();
+					StartCoroutine(_interactSequence);
 
-						_interactSequence = InteractSequence();
-						StartCoroutine(_interactSequence);
-					}
+					break;
 				}
 			}
 		}
@@ -105,7 +112,7 @@ namespace Quinn.Player
 			{
 				_interactable.Interact(player: gameObject);
 
-				if (_inventory.HeldItem != null)
+				if (_inventory.IsEquipped)
 				{
 					var sound = _inventory.HeldItem.InteractSound;
 
@@ -119,6 +126,8 @@ namespace Quinn.Player
 
 		private IEnumerator InteractSequence()
 		{
+			IsInteracting = true;
+
 			Vector2 target = _interactable.InteractPoint;
 			float dst = float.PositiveInfinity;
 
@@ -141,11 +150,6 @@ namespace Quinn.Player
 				.Where(x => x.Type == _interactable.InteractionType)
 				.FirstOrDefault()
 				.Animation;
-
-			if (interactAnim == null)
-			{
-				throw new System.NullReferenceException("Interaction animation could not be found!");
-			}
 
 			// Change playback speed.
 			var item = _inventory.HeldItem;

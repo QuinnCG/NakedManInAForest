@@ -56,6 +56,82 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5265937086177478638, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_ShapePathHash
+      value: 317674649
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265937086177478638, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_ShadowCastingSource
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265937086177478638, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: 'managedReferences[-2]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265937086177478638, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_ShadowShape2DProvider
+      value: 1253041191416496307
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265937086177478638, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_ShadowShape2DComponent
+      value: 
+      objectReference: {fileID: 1835113130481518357}
+    - target: {fileID: 5265937086177478638, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_ShadowMesh.m_InitialTrim
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265937086177478638, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_ShapePath.Array.data[0].x
+      value: -0.26288626
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265937086177478638, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_ShapePath.Array.data[0].y
+      value: 0.48901302
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265937086177478638, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_ShapePath.Array.data[1].x
+      value: -0.18176867
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265937086177478638, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_ShapePath.Array.data[1].y
+      value: 0.6778352
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265937086177478638, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_ShapePath.Array.data[2].x
+      value: 0.33464468
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265937086177478638, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_ShapePath.Array.data[2].y
+      value: 0.7277538
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265937086177478638, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_PreviousShadowCastingSource
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265937086177478638, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_PreviousShadowShape2DSource
+      value: 
+      objectReference: {fileID: 1835113130481518357}
+    - target: {fileID: 5265937086177478638, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_ShadowMesh.m_LocalBounds.m_Center.x
+      value: 0.0625
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265937086177478638, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_ShadowMesh.m_LocalBounds.m_Center.y
+      value: 0.3125
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265937086177478638, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_ShadowMesh.m_LocalBounds.m_Extent.x
+      value: 0.51249695
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265937086177478638, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_ShadowMesh.m_LocalBounds.m_Extent.y
+      value: 0.38749695
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265937086177478638, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: 'managedReferences[1253041191416496307]'
+      value: Unity.RenderPipelines.Universal.2D.Runtime UnityEngine.Rendering.Universal.ShadowShape2DProvider_SpriteRenderer
+      objectReference: {fileID: 0}
     - target: {fileID: 5271474284808813490, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
       propertyPath: m_Name
       value: Bush
@@ -161,3 +237,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+--- !u!212 &1835113130481518357 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6153055207873987881, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+  m_PrefabInstance: {fileID: 5481912875028300348}
+  m_PrefabAsset: {fileID: 0}

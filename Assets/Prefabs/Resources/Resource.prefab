@@ -139,6 +139,9 @@ MonoBehaviour:
   <InteractionType>k__BackingField: 0
   MaxDistance: 0.3
   HitPoints: 16
+  SpawnChance: 0.35
+  HealthStages: []
+  SpawnEntries: []
   ItemHitGroundSound:
     Guid:
       Data1: 2061342908
@@ -167,5 +170,3 @@ MonoBehaviour:
       Data3: 0
       Data4: 0
     Path: 
-  HealthStages: []
-  SpawnEntries: []
