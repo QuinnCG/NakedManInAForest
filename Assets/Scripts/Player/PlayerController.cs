@@ -11,6 +11,8 @@ namespace Quinn.Player
 	[RequireComponent(typeof(InteractionManager))]
 	public class PlayerController : MonoBehaviour, IFacing
 	{
+		public static PlayerController Instance { get; private set; }
+
 		[SerializeField, Required]
 		private AnimationClip IdleAnim;
 
@@ -33,6 +35,8 @@ namespace Quinn.Player
 
 		private void Awake()
 		{
+			Instance = this;
+
 			_animator = GetComponentInChildren<PlayableAnimator>();
 			_input = GetComponent<InputReader>();
 			_movement = GetComponent<Movement>();
@@ -75,6 +79,11 @@ namespace Quinn.Player
 			{
 				_interaction.InteractWithNearest();
 			}
+		}
+
+		public void TakeDamage()
+		{
+			Debug.Log("Player has taken damage!");
 		}
 
 		private void OnStartMove()

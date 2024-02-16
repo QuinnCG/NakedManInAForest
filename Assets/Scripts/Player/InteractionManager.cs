@@ -136,6 +136,7 @@ namespace Quinn.Player
 
 			while (dst > _interactable.InteractDistance)
 			{
+				target = _interactable.InteractPoint;
 				dst = Vector2.Distance(transform.position, target);
 
 				_movement.FaceDirection(Mathf.Sign(target.x - transform.position.x));
