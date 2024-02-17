@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Copper Axe
   Description: A nice metal axe.
-  Sprite: {fileID: 1220386783409945961, guid: 1044f3ad7552f294db290e58127d62a3, type: 3}
+  Sprite: {fileID: -8288363751503351972, guid: 1044f3ad7552f294db290e58127d62a3, type: 3}
   MaxStack: 1
   MaxUses: 64
   IsEquippable: 0
