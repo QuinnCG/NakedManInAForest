@@ -10,31 +10,36 @@ namespace Quinn.UI
 {
 	public class RecipeUI : MonoBehaviour
 	{
-		[SerializeField, Required]
-		private Button Button;
-
-		[SerializeField, Required]
-		private Image SlotA, SlotB, SlotC, ResultSlot;
-
-		[SerializeField, Required]
-		private Transform PlusA, PlusB, Equal;
-
 		[SerializeField]
 		private Recipe Recipe;
 
-		[SerializeField]
+		[SerializeField, Required, FoldoutGroup("References")]
+		private Button Button;
+
+		[SerializeField, Required, FoldoutGroup("References")]
+		private Image SlotA, SlotB, SlotC, ResultSlot;
+
+		[SerializeField, Required, FoldoutGroup("References")]
+		private Transform PlusA, PlusB, Equal;
+
+		[SerializeField, FoldoutGroup("References")]
 		private EventReference CraftSound, DropSound;
 
 		private void Awake()
 		{
 			static void Set(Image image, int count)
 			{
-				var textMesh = image.gameObject.GetComponentInChildren<TextMeshProUGUI>();
+				var textMesh = image.transform.parent.GetComponentInChildren<TextMeshProUGUI>();
 				textMesh.text = $"{count}x";
 			}
 
 			if (Recipe.Result == null)
 			{
+				SlotA.enabled = false;
+				SlotB.enabled = false;
+				SlotC.enabled = false;
+				ResultSlot.enabled = false;
+
 				return;
 			}
 
@@ -142,24 +147,7 @@ namespace Quinn.UI
 
 		private void Drop(int amount)
 		{
-			const string key = "PhysicalItem.prefab";
-			Vector2 pos = PlayerController.Instance.transform.position;
-
-			Addressables.InstantiateAsync(key, pos, Quaternion.identity).Completed += handle =>
-			{
-				var physicalItem = handle.Result.GetComponent<PhysicalItem>();
-
-				physicalItem.Set(new Slot()
-				{
-					Item = Recipe.Result,
-					Count = amount
-				});
-
-				if (!DropSound.IsNull)
-				{
-					RuntimeManager.PlayOneShot(DropSound);
-				}
-			};
+			InventoryManager.Instance.Spawn(Recipe.Result, amount);
 		}
 	}
 }

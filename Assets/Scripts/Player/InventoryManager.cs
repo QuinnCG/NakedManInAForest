@@ -4,8 +4,10 @@ using Game;
 using JetBrains.Annotations;
 using Sirenix.OdinInspector;
 using System;
+using Unity.Collections.LowLevel.Unsafe;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace Quinn.Player
 {
@@ -20,7 +22,7 @@ namespace Quinn.Player
 		public int SlotCount { get; private set; } = 6;
 
 		[SerializeField]
-		private EventReference EquipSound, DequipSound;
+		private EventReference EquipSound, DequipSound, DropSound;
 
 		public Item HeldItem { get; private set; }
 		public bool IsEquipped => HeldItem != null;
@@ -238,8 +240,10 @@ namespace Quinn.Player
 		{
 			for (int i = 0; i < _inventory.Length; i++)
 			{
-				if (_inventory[i] == null) return false;
-				if (_inventory[i].Count < _inventory[i].Item.MaxStack) return false;
+				var slot = GetAt(i);
+
+				if (slot == null || slot.Item == null) return false;
+				if (slot.Count < slot.Item.MaxStack) return false;
 			}
 
 			return true;
@@ -409,6 +413,42 @@ namespace Quinn.Player
 
 				OnToggleInventory?.Invoke(true);
 			}
+		}
+
+		public void Spawn(Item item, int amount)
+		{
+			const string key = "PhysicalItem.prefab";
+			Vector2 pos = PlayerController.Instance.transform.position;
+
+			Addressables.InstantiateAsync(key, pos, Quaternion.identity).Completed += handle =>
+			{
+				var physicalItem = handle.Result.GetComponent<PhysicalItem>();
+
+				physicalItem.Set(new Slot()
+				{
+					Item = item,
+					Count = amount
+				});
+
+				if (!DropSound.IsNull)
+				{
+					RuntimeManager.PlayOneShot(DropSound);
+				}
+			};
+		}
+
+		public void RemoveAt(int index)
+		{
+			var slot = GetAt(index);
+
+			if (slot != null)
+			{
+				slot.Item = null;
+				slot.Count = 0;
+				slot.RemainingUses = -1;
+			}
+
+			OnChanged?.Invoke();
 		}
 	}
 }

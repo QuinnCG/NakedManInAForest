@@ -29,6 +29,8 @@ namespace Quinn.UI
 
 		private void Awake()
 		{
+			CraftingMenu.SetActive(false);
+
 			Inventory.OnChanged += UpdateSlots;
 			Inventory.OnSelect += OnSelectSlot;
 

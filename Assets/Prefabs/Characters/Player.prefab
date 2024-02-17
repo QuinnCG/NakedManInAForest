@@ -813,6 +813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa1c0eedad96ac4cad207a7455dde90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HitPoints: 20
   IdleAnim: {fileID: 7400000, guid: 54201c430263a4143b8f0a8b175b6040, type: 2}
   <MoveAnim>k__BackingField: {fileID: 7400000, guid: f7d7a88b20ae625449210ed79dd30c14, type: 2}
   StartMoveSound:
@@ -1066,7 +1067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dfb618c7af45854eb9162b78bf25ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PollRadius: 2
+  PollRadius: 1.5
   InteractionLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -1137,3 +1138,10 @@ MonoBehaviour:
       Data3: -483443058
       Data4: 442007644
     Path: event:/SFX/Celeste Dequip
+  DropSound:
+    Guid:
+      Data1: 2061342908
+      Data2: 1082938773
+      Data3: 1706766761
+      Data4: 1712859317
+    Path: event:/SFX/Viola Pizz Item Thud

@@ -145,12 +145,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
       propertyPath: MaxDistance
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
       propertyPath: SpawnChance
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8465721752398975391, guid: c54ba7999c8fd114a9be6f348f27d0bc, type: 3}
       propertyPath: HitSound.Path
