@@ -60,7 +60,7 @@ namespace Quinn.UI
 			}
 			else
 			{
-				Destroy(SlotB.gameObject);
+				Destroy(SlotB.transform.parent.gameObject);
 				Destroy(PlusA.gameObject);
 				Destroy(PlusB.gameObject);
 			}
@@ -72,7 +72,7 @@ namespace Quinn.UI
 			}
 			else
 			{
-				Destroy(SlotC.gameObject);
+				Destroy(SlotC.transform.parent.gameObject);
 				Destroy(PlusB.gameObject);
 			}
 
