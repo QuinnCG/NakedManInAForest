@@ -11,6 +11,8 @@ namespace Quinn.Player
 {
 	public class InventoryManager : MonoBehaviour
 	{
+		public static InventoryManager Instance { get; private set; }
+
 		[SerializeField, Required]
 		private SpriteRenderer HeldItemSprite;
 
@@ -36,6 +38,8 @@ namespace Quinn.Player
 
 		private void Awake()
 		{
+			Instance = this;
+
 			_inventory = new Slot[SlotCount];
 			HeldItemSprite.sprite = null;
 
@@ -113,6 +117,46 @@ namespace Quinn.Player
 				Select(-1);
 			}
 		}
+
+		public int CalculateAvailableSpace(Item item)
+		{
+			int space = 0;
+
+			for (int i = 0; i < SlotCount; i++)
+			{
+				var slot = GetAt(i);
+
+				if (slot == null)
+				{
+					space += item.MaxStack;
+				}
+				else if (slot.Item == item)
+				{
+					int diff = item.MaxStack - slot.Count;
+					space += diff;
+				}
+			}
+
+			return space;
+		}
+
+		public int GetCount(Item item)
+		{
+			int count = 0;
+
+            for (int i = 0; i < SlotCount; i++)
+            {
+				var slot = GetAt(i);
+				if (slot == null) continue;
+
+				if (slot.Item == item)
+				{
+					count += slot.Count;
+				}
+            }
+
+			return count;
+        }
 
 		public void Set(int i, Slot slot)
 		{

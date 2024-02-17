@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 2970562004923385891}
   - component: {fileID: 2017998845952749261}
   - component: {fileID: 6270862641430426762}
+  - component: {fileID: 902535463666717116}
+  - component: {fileID: 1960343749609719122}
   m_Layer: 5
   m_Name: Recipe
   m_TagString: Untagged
@@ -109,6 +111,108 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &902535463666717116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3553682011426590277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2017998845952749261}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1960343749609719122}
+        m_TargetAssemblyTypeName: Quinn.UI.RecipeUI, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1960343749609719122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3553682011426590277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ae1bc305231c5489a49aeb419a4250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Button: {fileID: 902535463666717116}
+  SlotA: {fileID: 4230153777278682147}
+  SlotB: {fileID: 5879757610335219996}
+  SlotC: {fileID: 5037632374303435063}
+  ResultSlot: {fileID: 201145183441841905}
+  PlusA: {fileID: 2747864977347289176}
+  PlusB: {fileID: 9154809082357208718}
+  Equal: {fileID: 2280853244468521761}
+  Recipe:
+    HasA: 1
+    HasB: 1
+    HasC: 0
+    A: {fileID: 0}
+    ACount: 0
+    B: {fileID: 0}
+    BCount: 0
+    C: {fileID: 0}
+    CCount: 0
+    Result: {fileID: 0}
+    ResultCount: 0
+  CraftSound:
+    Guid:
+      Data1: -1971673183
+      Data2: 1273839812
+      Data3: -828183912
+      Data4: 1961685079
+    Path: event:/SFX/Item Crafted
+  DropSound:
+    Guid:
+      Data1: 2061342908
+      Data2: 1082938773
+      Data3: 1706766761
+      Data4: 1712859317
+    Path: event:/SFX/Viola Pizz Item Thud
 --- !u!1001 &1171329942899834903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -119,7 +223,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1340168056793944065, guid: ca15086d5d207154ba4bb1a1d35d0053, type: 3}
       propertyPath: m_Name
-      value: Plus
+      value: Plus B
       objectReference: {fileID: 0}
     - target: {fileID: 8020079961731307161, guid: ca15086d5d207154ba4bb1a1d35d0053, type: 3}
       propertyPath: m_Pivot.x
@@ -308,6 +412,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dc617968e4c01a4a835047868282fda, type: 3}
+--- !u!114 &201145183441841905 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1666422161647671509, guid: 1dc617968e4c01a4a835047868282fda, type: 3}
+  m_PrefabInstance: {fileID: 1579301509475989028}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &2722556073327706000 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3468537007901919668, guid: 1dc617968e4c01a4a835047868282fda, type: 3}
@@ -323,7 +438,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3081331733045544807, guid: 1dc617968e4c01a4a835047868282fda, type: 3}
       propertyPath: m_Name
-      value: Ingredient
+      value: Ingredient A
       objectReference: {fileID: 0}
     - target: {fileID: 3468537007901919668, guid: 1dc617968e4c01a4a835047868282fda, type: 3}
       propertyPath: m_Pivot.x
@@ -415,6 +530,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3468537007901919668, guid: 1dc617968e4c01a4a835047868282fda, type: 3}
   m_PrefabInstance: {fileID: 3284483480286665974}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4230153777278682147 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1666422161647671509, guid: 1dc617968e4c01a4a835047868282fda, type: 3}
+  m_PrefabInstance: {fileID: 3284483480286665974}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5096186111675804105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -425,7 +551,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3081331733045544807, guid: 1dc617968e4c01a4a835047868282fda, type: 3}
       propertyPath: m_Name
-      value: Ingredient
+      value: Ingredient B
       objectReference: {fileID: 0}
     - target: {fileID: 3468537007901919668, guid: 1dc617968e4c01a4a835047868282fda, type: 3}
       propertyPath: m_Pivot.x
@@ -512,6 +638,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dc617968e4c01a4a835047868282fda, type: 3}
+--- !u!114 &5879757610335219996 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1666422161647671509, guid: 1dc617968e4c01a4a835047868282fda, type: 3}
+  m_PrefabInstance: {fileID: 5096186111675804105}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8546691128680603773 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3468537007901919668, guid: 1dc617968e4c01a4a835047868282fda, type: 3}
@@ -527,7 +664,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1340168056793944065, guid: ca15086d5d207154ba4bb1a1d35d0053, type: 3}
       propertyPath: m_Name
-      value: Plus
+      value: Plus A
       objectReference: {fileID: 0}
     - target: {fileID: 8020079961731307161, guid: ca15086d5d207154ba4bb1a1d35d0053, type: 3}
       propertyPath: m_Pivot.x
@@ -731,7 +868,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3081331733045544807, guid: 1dc617968e4c01a4a835047868282fda, type: 3}
       propertyPath: m_Name
-      value: Ingredient
+      value: Ingredient C
       objectReference: {fileID: 0}
     - target: {fileID: 3468537007901919668, guid: 1dc617968e4c01a4a835047868282fda, type: 3}
       propertyPath: m_Pivot.x
@@ -818,6 +955,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dc617968e4c01a4a835047868282fda, type: 3}
+--- !u!114 &5037632374303435063 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1666422161647671509, guid: 1dc617968e4c01a4a835047868282fda, type: 3}
+  m_PrefabInstance: {fileID: 5965318784960180706}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &7127977599142099030 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3468537007901919668, guid: 1dc617968e4c01a4a835047868282fda, type: 3}
