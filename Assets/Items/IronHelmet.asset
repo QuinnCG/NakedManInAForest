@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4e5ab351eaa5fb44825c8ca7ce1c38f, type: 3}
-  m_Name: StoneAxe
+  m_Name: IronHelmet
   m_EditorClassIdentifier: 
-  DisplayName: Stone Axe
-  Description: A crude but effective chopping tool.
-  Sprite: {fileID: 7253819879580863142, guid: cedf947c76a88b54e82b6145d61a90c8, type: 3}
+  DisplayName: Copper Axe
+  Description: A nice metal axe.
+  Sprite: {fileID: 1220386783409945961, guid: 1044f3ad7552f294db290e58127d62a3, type: 3}
   MaxStack: 1
-  MaxUses: 32
-  IsEquippable: 1
+  MaxUses: 64
+  IsEquippable: 0
   InteractionType: 2
-  InteractPlaybackFactor: 0.8
+  InteractPlaybackFactor: 1.7
   InteractSound:
     Guid:
       Data1: -1514955672
@@ -27,6 +27,6 @@ MonoBehaviour:
       Data3: 1414547878
       Data4: -1568253323
     Path: event:/SFX/Bassoon + Glock Mine
-  IsWearable: 0
+  IsWearable: 1
   AttireType: 0
-  DamageReduction: 0
+  DamageReduction: 2

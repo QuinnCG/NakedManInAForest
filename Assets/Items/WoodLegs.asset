@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4e5ab351eaa5fb44825c8ca7ce1c38f, type: 3}
+  m_Name: WoodLegs
+  m_EditorClassIdentifier: 
+  DisplayName: Wood Legs
+  Description: It might protect your legs?
+  Sprite: {fileID: 3741565635653241205, guid: 1044f3ad7552f294db290e58127d62a3, type: 3}
+  MaxStack: 1
+  MaxUses: 16
+  IsEquippable: 0
+  InteractionType: 0
+  InteractPlaybackFactor: 1
+  InteractSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  IsWearable: 1
+  AttireType: 2
+  DamageReduction: 1

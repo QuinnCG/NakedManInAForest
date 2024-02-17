@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4e5ab351eaa5fb44825c8ca7ce1c38f, type: 3}
-  m_Name: StoneAxe
+  m_Name: IronAxe
   m_EditorClassIdentifier: 
-  DisplayName: Stone Axe
-  Description: A crude but effective chopping tool.
-  Sprite: {fileID: 7253819879580863142, guid: cedf947c76a88b54e82b6145d61a90c8, type: 3}
+  DisplayName: Iron Axe
+  Description: A nice metal axe.
+  Sprite: {fileID: 4245916186322517452, guid: cedf947c76a88b54e82b6145d61a90c8, type: 3}
   MaxStack: 1
-  MaxUses: 32
+  MaxUses: 64
   IsEquippable: 1
   InteractionType: 2
-  InteractPlaybackFactor: 0.8
+  InteractPlaybackFactor: 1.2
   InteractSound:
     Guid:
       Data1: -1514955672

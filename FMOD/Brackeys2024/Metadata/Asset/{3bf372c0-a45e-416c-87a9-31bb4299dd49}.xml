@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{3bf372c0-a45e-416c-87a9-31bb4299dd49}">
+		<property name="assetPath">
+			<value>Cimbasso Attack/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{504aa506-1a94-4f75-a7b3-90c431f5e27a}</destination>
+		</relationship>
+	</object>
+</objects>

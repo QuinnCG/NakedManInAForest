@@ -26,6 +26,9 @@ namespace Quinn.AI
 		private AnimationClip HurtAnim, DeathAnim;
 
 		[SerializeField]
+		private EventReference AttackSound;
+
+		[SerializeField]
 		private EventReference HurtSound, DeathSound;
 
 		private SpriteRenderer _renderer;
@@ -109,6 +112,11 @@ namespace Quinn.AI
 			if (!_isAttacking)
 			{
 				_isAttacking = true;
+
+				if (!AttackSound.IsNull)
+				{
+					RuntimeManager.PlayOneShot(AttackSound, transform.position);
+				}
 
 				_attackSequence = AttackSequence();
 				StartCoroutine(_attackSequence);

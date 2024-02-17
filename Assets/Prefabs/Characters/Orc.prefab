@@ -49,6 +49,10 @@ PrefabInstance:
       value: event:/SFX/Cimbasso Death
       objectReference: {fileID: 0}
     - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
+      propertyPath: AttackSound.Path
+      value: event:/SFX/Cimbasso Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
       propertyPath: HurtSound.Guid.Data1
       value: -1286073857
       objectReference: {fileID: 0}
@@ -79,6 +83,22 @@ PrefabInstance:
     - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
       propertyPath: DeathSound.Guid.Data4
       value: 1693536102
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
+      propertyPath: AttackSound.Guid.Data1
+      value: -894303248
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
+      propertyPath: AttackSound.Guid.Data2
+      value: 1210227089
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
+      propertyPath: AttackSound.Guid.Data3
+      value: -346227316
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
+      propertyPath: AttackSound.Guid.Data4
+      value: 477637311
       objectReference: {fileID: 0}
     - target: {fileID: 4251442293016676845, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
       propertyPath: m_Sprite
