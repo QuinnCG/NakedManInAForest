@@ -178,6 +178,8 @@ namespace Quinn.AI
 		{
 			if (!_isDead)
 			{
+				Unity.Services.Analytics.AnalyticsService.Instance.RecordEvent("enemyDeath");
+
 				_isDead = true;
 
 				if (!DeathSound.IsNull)

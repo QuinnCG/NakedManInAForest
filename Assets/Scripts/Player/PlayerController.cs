@@ -134,6 +134,8 @@ namespace Quinn.Player
 
 		private IEnumerator DeathSequence()
 		{
+			Unity.Services.Analytics.AnalyticsService.Instance.RecordEvent("playerDeath");
+
 			yield return new WaitForSeconds(3f);
 			SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
 		}

@@ -21,10 +21,7 @@ namespace Quinn.Core
 		private async void Awake()
 		{
 			await UnityServices.InitializeAsync();
-
-#if !UNITY_EDITOR
 			AnalyticsService.Instance.StartDataCollection();
-#endif
 		}
 	}
 }

@@ -53,6 +53,8 @@ namespace Quinn.AI
 
 		private IEnumerator SpawnSequence()
 		{
+			Unity.Services.Analytics.AnalyticsService.Instance.RecordEvent("enemySpawned");
+
 			// Get spawn position.
 			Vector2 pos = GetSpawnPosition();
 

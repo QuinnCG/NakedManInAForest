@@ -111,6 +111,12 @@ namespace Quinn.UI
 			}
 
 			Add(toAdd);
+
+			var evnt = new Unity.Services.Analytics.CustomEvent("itemCrafted")
+			{
+				["itemName"] = Recipe.Result.name
+			};
+			Unity.Services.Analytics.AnalyticsService.Instance.RecordEvent(evnt);
 		}
 
 		private bool HasRequiredItems()
