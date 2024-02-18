@@ -83,9 +83,9 @@ namespace Quinn.Player
 			// Deselect.
 			if (index == -1)
 			{
-				if (_selectedSlot > -1 && GetAt(_selectedSlot).Item.IsWearable)
+				if (index > -1 && GetAt(index).Item.IsWearable)
 				{
-					UnsetBodySlot(GetAt(_selectedSlot).Item.AttireType);
+					UnsetBodySlot(GetAt(index).Item.AttireType);
 				}
 				else
 				{
@@ -106,7 +106,7 @@ namespace Quinn.Player
 			if (_selectedSlot != index)
 			{
 				// Tried to select empty slot, deselecting.
-				if (GetAt(index) == null)
+				if (GetAt(index) == null || index == _selectedSlot)
 				{
 					Select(-1);
 					return;
@@ -115,20 +115,22 @@ namespace Quinn.Player
 				// Select unselected slot.
 				if (GetAt(index).Item.IsEquippable)
 				{
-					if (GetAt(index).Item.IsWearable)
-					{
-						SetBodySlot(GetAt(index).Item);
-					}
-					else
-					{
-						_selectedSlot = index;
+					_selectedSlot = index;
 
-						var slot = GetAt(index);
-						HeldItem = slot.Item;
+					var slot = GetAt(index);
+					HeldItem = slot.Item;
 
-						HeldItemSprite.sprite = slot.Item.Sprite;
-						OnSelect?.Invoke(index);
-					}
+					HeldItemSprite.sprite = slot.Item.Sprite;
+					OnSelect?.Invoke(index);
+
+					Jiggle();
+					RuntimeManager.PlayOneShot(EquipSound, transform.position);
+				}
+				else if (GetAt(index).Item.IsWearable)
+				{
+					Unity.Services.Analytics.AnalyticsService.Instance.RecordEvent("equippedAttire");
+
+					SetBodySlot(GetAt(index).Item);
 
 					Jiggle();
 					RuntimeManager.PlayOneShot(EquipSound, transform.position);
@@ -186,13 +188,28 @@ namespace Quinn.Player
 			_inventory[i] = slot;
 		}
 
-		private Item GetBodySlot(Item item) => item.AttireType switch
+		public int GetDamageReduction()
 		{
-			AttireType.Head => HeadSlot,
-			AttireType.Torso => TorsoSlot,
-			AttireType.Legs => LegsSlot,
-			_ => throw new NotImplementedException(),
-		};
+			int reduction = 0;
+
+			if (HeadSlot != null)
+			{
+				reduction += Mathf.CeilToInt(HeadSlot.DamageReduction);
+			}
+
+			if (TorsoSlot != null)
+			{
+				reduction += Mathf.CeilToInt(TorsoSlot.DamageReduction);
+			}
+
+			if (LegsSlot != null)
+			{
+				reduction += Mathf.CeilToInt(LegsSlot.DamageReduction);
+			}
+
+			return reduction;
+		}
+		
 
 		private void SetBodySlot(Item item)
 		{

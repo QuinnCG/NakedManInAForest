@@ -4,7 +4,6 @@ using Quinn.Player;
 using Quinn.WorldGeneration;
 using Sirenix.OdinInspector;
 using System.Collections;
-using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 namespace Quinn.AI
@@ -40,14 +39,19 @@ namespace Quinn.AI
 
 		private IEnumerator SpawnLoop()
 		{
+			float factor = 1f;
+
 			while (true)
 			{
-				yield return new WaitForSeconds(Random.Range(MinSpawnInterval, MaxSpawnInterval));
+				yield return new WaitForSeconds(Random.Range(MinSpawnInterval, MaxSpawnInterval) * factor);
 
 				for (int i = 0; i < Random.Range(MinSpawnCount, MaxSpawnCount); i++)
 				{
 					StartCoroutine(SpawnSequence());
 				}
+
+				factor -= 0.05f;
+				factor = Mathf.Max(factor, 0.25f);
 			}
 		}
 
@@ -119,7 +123,7 @@ namespace Quinn.AI
 
 		private GameObject SpawnEnemy(Vector2 position)
 		{
-			GameObject enemy = EnemyPrefabs[Random.Range(0, EnemyPrefabs.Length - 1)];
+			GameObject enemy = EnemyPrefabs[Random.Range(0, EnemyPrefabs.Length)];
 			Instantiate(enemy, position, Quaternion.identity, transform);
 
 			return enemy;

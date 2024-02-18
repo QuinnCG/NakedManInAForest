@@ -1,4 +1,5 @@
 using FMODUnity;
+using Quinn.UI;
 using Quinn.WorldGeneration;
 using Sirenix.OdinInspector;
 using System;
@@ -83,7 +84,7 @@ namespace Quinn.Player
 		{
 			if (Time.time > _nextRegenTime)
 			{
-				_nextRegenTime = Time.time + 10f;
+				_nextRegenTime = Time.time + 30f;
 				_hitPoints = Mathf.Min(_hitPoints + 1, HitPoints);
 			}
 
@@ -101,7 +102,10 @@ namespace Quinn.Player
 
 		public void TakeDamage()
 		{
-			_hitPoints--;
+			int damage = 11;
+			damage = Mathf.Max(1, damage - InventoryManager.Instance.GetDamageReduction());
+
+			_hitPoints -= damage;
 			_hitPoints = Mathf.Max(0, _hitPoints);
 
 			if (_hitPoints == 0)
