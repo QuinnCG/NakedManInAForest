@@ -5,8 +5,16 @@ namespace Quinn
 {
 	public class SFXPlayer : MonoBehaviour
 	{
+		[SerializeField]
+		private float SoundInterval = 0.1f;
+
+		private float _nextPlayTime;
+
 		public void PlaySound(string name)
 		{
+			if (Time.time < _nextPlayTime) return;
+			_nextPlayTime = Time.time + SoundInterval;
+
 			if (!name.StartsWith("event:/"))
 			{
 				name = $"event:/SFX/{name}";
@@ -17,6 +25,9 @@ namespace Quinn
 
 		public void PlaySoundAttached(string name)
 		{
+			if (Time.time < _nextPlayTime) return;
+			_nextPlayTime = Time.time + SoundInterval;
+
 			if (!name.StartsWith("event:/"))
 			{
 				name = $"event:/SFX/{name}";

@@ -4,6 +4,7 @@ using Game;
 using JetBrains.Annotations;
 using Sirenix.OdinInspector;
 using System;
+using System.ComponentModel;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -22,6 +23,9 @@ namespace Quinn.Player
 		public int SlotCount { get; private set; } = 6;
 
 		[SerializeField]
+		private SpriteRenderer HeadSprite, TorsoSprite, LegsSprite;
+
+		[SerializeField]
 		private EventReference EquipSound, DequipSound, DropSound;
 
 		public Item HeldItem { get; private set; }
@@ -37,6 +41,8 @@ namespace Quinn.Player
 
 		private int _selectedSlot = -1;
 		private Slot[] _inventory;
+
+		private Item HeadSlot, TorsoSlot, LegsSlot;
 
 		private void Awake()
 		{
@@ -77,11 +83,19 @@ namespace Quinn.Player
 			// Deselect.
 			if (index == -1)
 			{
-				HeldItem = null;
-				_selectedSlot = -1;
-				OnSelect?.Invoke(-1);
+				if (_selectedSlot > -1 && GetAt(_selectedSlot).Item.IsWearable)
+				{
+					UnsetBodySlot(GetAt(_selectedSlot).Item.AttireType);
+				}
+				else
+				{
+					HeldItem = null;
+					_selectedSlot = -1;
+					OnSelect?.Invoke(-1);
 
-				HeldItemSprite.sprite = null;
+					HeldItemSprite.sprite = null;
+				}
+
 				Jiggle();
 				RuntimeManager.PlayOneShot(DequipSound, transform.position);
 
@@ -101,16 +115,23 @@ namespace Quinn.Player
 				// Select unselected slot.
 				if (GetAt(index).Item.IsEquippable)
 				{
-					_selectedSlot = index;
+					if (GetAt(index).Item.IsWearable)
+					{
+						SetBodySlot(GetAt(index).Item);
+					}
+					else
+					{
+						_selectedSlot = index;
 
-					var slot = GetAt(index);
-					HeldItem = slot.Item;
+						var slot = GetAt(index);
+						HeldItem = slot.Item;
 
-					HeldItemSprite.sprite = slot.Item.Sprite;
+						HeldItemSprite.sprite = slot.Item.Sprite;
+						OnSelect?.Invoke(index);
+					}
+
 					Jiggle();
 					RuntimeManager.PlayOneShot(EquipSound, transform.position);
-
-					OnSelect(index);
 				}
 			}
 			// Tried selecting already selected slot, deselecting.
@@ -146,8 +167,8 @@ namespace Quinn.Player
 		{
 			int count = 0;
 
-            for (int i = 0; i < SlotCount; i++)
-            {
+			for (int i = 0; i < SlotCount; i++)
+			{
 				var slot = GetAt(i);
 				if (slot == null) continue;
 
@@ -155,14 +176,64 @@ namespace Quinn.Player
 				{
 					count += slot.Count;
 				}
-            }
+			}
 
 			return count;
-        }
+		}
 
 		public void Set(int i, Slot slot)
 		{
 			_inventory[i] = slot;
+		}
+
+		private Item GetBodySlot(Item item) => item.AttireType switch
+		{
+			AttireType.Head => HeadSlot,
+			AttireType.Torso => TorsoSlot,
+			AttireType.Legs => LegsSlot,
+			_ => throw new NotImplementedException(),
+		};
+
+		private void SetBodySlot(Item item)
+		{
+			switch (item.AttireType)
+			{
+				case AttireType.Head:
+					HeadSlot = item;
+					HeadSprite.sprite = item.Sprite;
+					break;
+
+				case AttireType.Torso:
+					TorsoSlot = item;
+					TorsoSprite.sprite = item.Sprite;
+					break;
+
+				case AttireType.Legs:
+					LegsSlot = item;
+					LegsSprite.sprite = item.Sprite;
+					break;
+			}
+		}
+
+		private void UnsetBodySlot(AttireType type)
+		{
+			switch (type)
+			{
+				case AttireType.Head:
+					HeadSlot = null;
+					HeadSprite.sprite = null;
+					break;
+
+				case AttireType.Torso:
+					TorsoSlot = null;
+					TorsoSprite.sprite = null;
+					break;
+
+				case AttireType.Legs:
+					LegsSlot = null;
+					LegsSprite.sprite = null;
+					break;
+			}
 		}
 
 		private void Jiggle()

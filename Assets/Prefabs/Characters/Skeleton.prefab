@@ -35,7 +35,7 @@ PrefabInstance:
     - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
       propertyPath: MoveAnim
       value: 
-      objectReference: {fileID: 7400000, guid: 91c2598f5d4c71a4fa7c9bc9a088a29e, type: 2}
+      objectReference: {fileID: 7400000, guid: 6344362dbddc33c4b9a7c10dac7df7d3, type: 2}
     - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
       propertyPath: DeathAnim
       value: 
@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
       propertyPath: AttackSound.Path
-      value: event:/SFX/Xylophone Hurt
+      value: event:/SFX/Xylophone Attack
       objectReference: {fileID: 0}
     - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
       propertyPath: HurtSound.Guid.Data1
@@ -98,19 +98,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
       propertyPath: AttackSound.Guid.Data1
-      value: -282798703
+      value: 1589455987
       objectReference: {fileID: 0}
     - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
       propertyPath: AttackSound.Guid.Data2
-      value: 1229175958
+      value: 1122153572
       objectReference: {fileID: 0}
     - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
       propertyPath: AttackSound.Guid.Data3
-      value: 838108078
+      value: 506373792
       objectReference: {fileID: 0}
     - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
       propertyPath: AttackSound.Guid.Data4
-      value: -880253180
+      value: -1921978409
       objectReference: {fileID: 0}
     - target: {fileID: 4251442293016676845, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
       propertyPath: m_Sprite

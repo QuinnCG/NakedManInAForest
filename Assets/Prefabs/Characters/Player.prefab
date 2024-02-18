@@ -628,6 +628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e28dd7c7ccfed4f98f6ce37ac56c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SoundInterval: 0.1
 --- !u!114 &763883133216201011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -762,7 +763,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.19701993}
+  m_Offset: {x: 0, y: 0.16116989}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -772,7 +773,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.46251178, y: 0.3599373}
+  m_Size: {x: 0.29334033, y: 0.19861227}
   m_EdgeRadius: 0.05
 --- !u!50 &3831804688997634
 Rigidbody2D:
@@ -1067,7 +1068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dfb618c7af45854eb9162b78bf25ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PollRadius: 1.5
+  PollRadius: 3
   InteractionLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -1124,6 +1125,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HeldItemSprite: {fileID: 1376093544661111875}
   <SlotCount>k__BackingField: 6
+  HeadSprite: {fileID: 0}
+  TorsoSprite: {fileID: 0}
+  LegsSprite: {fileID: 0}
   EquipSound:
     Guid:
       Data1: -857741902
