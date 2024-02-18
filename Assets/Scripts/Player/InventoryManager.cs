@@ -357,7 +357,10 @@ namespace Quinn.Player
 		{
 			for (int i = 0; i <= _inventory.Length; i++)
 			{
-				if (_inventory[i] == null) return i;
+				if (_inventory[i] == null || _inventory[i].Item == null)
+				{
+					return i;
+				}
 			}
 
 			return -1;
@@ -391,14 +394,13 @@ namespace Quinn.Player
 				for (int i = 0; i < SlotCount; i++)
 				{
 					var s = GetAt(i);
-					if (s == null) continue;
+					if (s == null || s.Item == null) continue;
 
-					if (s.Item != null && s.Item == item && s.Count < item.MaxStack)
+					if (s.Item == item && s.Count < item.MaxStack)
 					{
 						existingSlotIndex = i;
 					}
 				}
-
 
 				// Add to existing slot.
 				if (existingSlotIndex > -1)
