@@ -49,19 +49,27 @@ namespace Quinn.AI
 
 		private IEnumerator SpawnLoop()
 		{
+			// Buffer.
+			yield return new WaitForSeconds(20f);
+
+			// Spawn rate factor.
 			float factor = 1f;
+			float maxCountFactor = 1f;
 
 			while (true)
 			{
 				yield return new WaitForSeconds(Random.Range(MinSpawnInterval, MaxSpawnInterval) * factor);
 
-				for (int i = 0; i < Random.Range(MinSpawnCount, MaxSpawnCount); i++)
+				for (int i = 0; i < Random.Range(MinSpawnCount, Mathf.RoundToInt((float)MaxSpawnCount * MaxSpawnCount)); i++)
 				{
 					StartCoroutine(SpawnSequence());
 				}
 
-				factor -= 0.05f;
+				factor -= 0.02f;
 				factor = Mathf.Max(factor, 0.25f);
+
+				maxCountFactor += 0.3f;
+				maxCountFactor = Mathf.Min(maxCountFactor, 6f);
 			}
 		}
 
@@ -103,6 +111,7 @@ namespace Quinn.AI
 		private Vector2 GetSpawnPosition()
 		{
 			Vector2 playerPos = PlayerController.Instance.transform.position;
+			playerPos = new Vector2(Mathf.Floor(playerPos.x), Mathf.Floor(playerPos.y));
 
 			Vector2 pos;
 			bool isValid;
@@ -112,7 +121,7 @@ namespace Quinn.AI
 
 			do
 			{
-				pos = playerPos + (Random.insideUnitCircle * SpawnRadius);
+				pos = playerPos + (Random.insideUnitCircle * SpawnRadius) + (Vector2.one * 0.5f);
 				isValid = WorldGenerator.Instance.IsGround(pos);
 
 				attempts++;

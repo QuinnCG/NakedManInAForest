@@ -125,11 +125,18 @@ namespace Quinn.Player
 				Jiggle();
 				RuntimeManager.PlayOneShot(DequipSound, transform.position);
 			}
+			// Selecting equipped slot.
+			else if (index == _selectedSlot && index > -1)
+			{
+				Select(-1);
+				return;
+			}
 			// Selected unselected slot.
 			else if (_selectedSlot != index)
 			{
 				// Tried to select empty slot, deselecting.
-				if (GetAt(index) == null)
+				var unselectedSlot = GetAt(index);
+				if (unselectedSlot == null || unselectedSlot.Item == null || (!unselectedSlot.Item.IsEquippable && !unselectedSlot.Item.IsWearable))
 				{
 					Select(-1);
 					return;

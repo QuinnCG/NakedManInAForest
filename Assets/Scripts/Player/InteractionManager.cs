@@ -43,6 +43,25 @@ namespace Quinn.Player
 
 		public void InteractWithNearest()
 		{
+			IInteractable GetNearest(IEnumerable<IInteractable> collection)
+			{
+				IInteractable best = null;
+				float bestDst = float.PositiveInfinity;
+
+				foreach (var item in collection)
+				{
+					float dst = Vector2.Distance(transform.position, item.InteractPoint);
+
+					if (dst < bestDst)
+					{
+						best = item;
+						bestDst = dst;
+					}
+				}
+
+				return best;
+			}
+
 			if (_interactSequence != null) return;
 
 			// Physics cast to find nearby colliders.
@@ -67,13 +86,11 @@ namespace Quinn.Player
 				}
 			}
 
-			interactables.OrderBy(x => Vector2.Distance(transform.position, x.InteractPoint));
-
 			// If collider is interactable, begin interacting.
 			while (interactables.Count > 0)
 			{
-				var nearest = interactables[0];
-				interactables.RemoveAt(0);
+				var nearest = GetNearest(interactables);
+				interactables.Remove(nearest);
 
 				bool isPickUp = nearest.InteractionType == InteractionType.PickUp;
 				bool isAttack = nearest.InteractionType == InteractionType.Attack;

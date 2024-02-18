@@ -130,6 +130,9 @@ namespace Quinn
 				var collider = instance.GetComponent<Collider2D>();
 				collider.enabled = false;
 
+				var renderer = instance.GetComponent<SpriteRenderer>();
+				renderer.sortingOrder = 10;
+
 				instance.GetComponent<PhysicalItem>().Set(new Slot()
 				{
 					Item = entry.Item,
@@ -153,6 +156,7 @@ namespace Quinn
 					else
 					{
 						collider.enabled = true;
+						renderer.sortingOrder = 0;
 
 						if (!ItemHitGroundSound.IsNull)
 						{

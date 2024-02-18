@@ -87,7 +87,7 @@ namespace Quinn.AI
 		{
 			if (_isDead) return;
 
-			int damage = 1;
+			int damage = 2;
 
 			var item = InventoryManager.Instance.HeldItem;
 			if (item != null && item.IsEquippable)

@@ -61,7 +61,6 @@ namespace Quinn.Player
 			_interaction = GetComponent<InteractionManager>();
 
 			_input.Move.performed += _ => OnStartMove();
-			_input.Interact.performed += _ => OnInteract();
 			_input.Dash.performed += _ => OnDash();
 
 			_hitPoints = HitPoints;
@@ -93,7 +92,7 @@ namespace Quinn.Player
 
 			if (Time.time > _nextRegenTime)
 			{
-				_nextRegenTime = Time.time + 30f;
+				_nextRegenTime = Time.time + 2f;
 				_hitPoints = Mathf.Min(_hitPoints + 1, HitPoints);
 			}
 
@@ -162,11 +161,6 @@ namespace Quinn.Player
 			_movement.Move(moveDir);
 		}
 
-		private void OnInteract()
-		{
-			_interaction.InteractWithNearest();
-		}
-
 		private void OnDash()
 		{
 			_movement.Dash();
@@ -178,6 +172,7 @@ namespace Quinn.Player
 
 			Music.Stop();
 
+			_animator.Stop();
 			_animator.Play(DeathAnim);
 			yield return new WaitForSeconds(DeathAnim.length);
 

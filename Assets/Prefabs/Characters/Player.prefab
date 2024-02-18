@@ -358,7 +358,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_SortAtRoot: 0
 --- !u!1 &7062489653647129240
 GameObject:
@@ -816,6 +816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HitPoints: 8
   IdleAnim: {fileID: 7400000, guid: 54201c430263a4143b8f0a8b175b6040, type: 2}
+  DeathAnim: {fileID: 0}
   <MoveAnim>k__BackingField: {fileID: 7400000, guid: f7d7a88b20ae625449210ed79dd30c14, type: 2}
   StartMoveSound:
     Guid:
@@ -824,6 +825,21 @@ MonoBehaviour:
       Data3: 919526076
       Data4: 1406529627
     Path: event:/SFX/Bass Clarinet Footstep
+  HurtSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  DeathSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  Music: {fileID: 0}
 --- !u!114 &5621118034174383070
 MonoBehaviour:
   m_ObjectHideFlags: 0

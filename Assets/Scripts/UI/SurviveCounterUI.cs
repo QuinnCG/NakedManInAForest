@@ -19,7 +19,7 @@ namespace Quinn.UI
 		private void Update()
 		{
 			string time = ((Time.time - _startTime) / 60f).ToString("0.0");
-			Text.text = $"Survived: {time}m";
+			Text.text = $"Survived: {time} min.";
 		}
 	}
 }
