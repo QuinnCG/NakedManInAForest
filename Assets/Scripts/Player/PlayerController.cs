@@ -41,6 +41,8 @@ namespace Quinn.Player
 
 		private int _hitPoints;
 
+		private float _nextRegenTime;
+
 		private void Awake()
 		{
 			Instance = this;
@@ -79,6 +81,12 @@ namespace Quinn.Player
 
 		private void Update()
 		{
+			if (Time.time > _nextRegenTime)
+			{
+				_nextRegenTime = Time.time + 10f;
+				_hitPoints = Mathf.Min(_hitPoints + 1, HitPoints);
+			}
+
 			if (!_interaction.IsInteracting)
 			{
 				UpdateMove();
