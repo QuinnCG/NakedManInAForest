@@ -33,6 +33,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7400000, guid: 9aab65be47742bf41ab1b6f48ce374bc, type: 2}
     - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
+      propertyPath: HitPoints
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
       propertyPath: AttackAnim
       value: 
       objectReference: {fileID: 7400000, guid: 3e524078dd443ae4189b12ec33192f07, type: 2}

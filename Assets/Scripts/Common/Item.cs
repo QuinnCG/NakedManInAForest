@@ -31,6 +31,9 @@ namespace Quinn
 		public float InteractPlaybackFactor = 1f;
 
 		[ShowIf(nameof(IsEquippable))]
+		public int Damage = 1;
+
+		[ShowIf(nameof(IsEquippable))]
 		public EventReference InteractSound;
 
 		[Space, HideIf(nameof(IsEquippable))]

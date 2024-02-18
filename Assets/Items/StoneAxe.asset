@@ -20,6 +20,7 @@ MonoBehaviour:
   IsEquippable: 1
   InteractionType: 2
   InteractPlaybackFactor: 0.8
+  Damage: 6
   InteractSound:
     Guid:
       Data1: -1514955672

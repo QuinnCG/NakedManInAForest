@@ -42,7 +42,7 @@ PrefabInstance:
       objectReference: {fileID: 7400000, guid: 9aab65be47742bf41ab1b6f48ce374bc, type: 2}
     - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
       propertyPath: HitPoints
-      value: 4
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2435468930839460736, guid: 6773e204edaee0a43ae290a9df200e4c, type: 3}
       propertyPath: AttackAnim
