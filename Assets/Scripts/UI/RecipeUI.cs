@@ -31,6 +31,11 @@ namespace Quinn.UI
 			{
 				var textMesh = image.transform.parent.GetComponentInChildren<TextMeshProUGUI>();
 				textMesh.text = $"{count}x";
+
+				if (count <= 1)
+				{
+					textMesh.enabled = false;
+				}
 			}
 
 			if (Recipe.Result == null)
@@ -77,6 +82,7 @@ namespace Quinn.UI
 			}
 
 			ResultSlot.sprite = Recipe.Result.Sprite;
+			Set(ResultSlot, Recipe.ResultCount);
 		}
 
 		public void OnClick()

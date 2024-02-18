@@ -42,8 +42,15 @@ namespace Quinn.UI
 				Icon.gameObject.SetActive(true);
 				Icon.sprite = slot.Item.Sprite;
 
-				Count.gameObject.SetActive(true);
-				Count.text = $"{slot.Count}x";
+				if (slot.Item.MaxStack > 1)
+				{
+					Count.gameObject.SetActive(true);
+					Count.text = $"{slot.Count}x";
+				}
+				else
+				{
+					Count.gameObject.SetActive(false);
+				}
 			}
 		}
 

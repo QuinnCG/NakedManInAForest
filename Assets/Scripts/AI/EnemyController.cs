@@ -69,13 +69,16 @@ namespace Quinn.AI
 				var anim = _movement.IsMoving ? MoveAnim : IdleAnim;
 				_animator.Play(anim);
 
-				var target = PlayerController.Instance.transform.position;
-				_dir = (target - transform.position).normalized;
-				_movement.MoveTowards(target);
-
-				if (Vector2.Distance(transform.position, target) < AttackRadius)
+				if (!PlayerController.Instance.IsDead)
 				{
-					StartAttack();
+					var target = PlayerController.Instance.transform.position;
+					_dir = (target - transform.position).normalized;
+					_movement.MoveTowards(target);
+
+					if (Vector2.Distance(transform.position, target) < AttackRadius)
+					{
+						StartAttack();
+					}
 				}
 			}
 		}

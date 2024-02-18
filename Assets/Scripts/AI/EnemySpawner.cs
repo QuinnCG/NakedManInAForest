@@ -37,6 +37,16 @@ namespace Quinn.AI
 			StartCoroutine(SpawnLoop());
 		}
 
+		private void Update()
+		{
+#if UNITY_EDITOR
+			if (Input.GetKeyDown(KeyCode.H))
+			{
+				StartCoroutine(SpawnSequence());
+			}
+#endif
+		}
+
 		private IEnumerator SpawnLoop()
 		{
 			float factor = 1f;

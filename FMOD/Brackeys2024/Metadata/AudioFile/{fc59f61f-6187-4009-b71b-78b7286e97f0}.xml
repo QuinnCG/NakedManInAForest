@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{fc59f61f-6187-4009-b71b-78b7286e97f0}">
+		<property name="assetPath">
+			<value>Skeleton Attack/Skeleton Attack_02.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>32</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.1820937499999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{504aa506-1a94-4f75-a7b3-90c431f5e27a}</destination>
+		</relationship>
+	</object>
+</objects>
