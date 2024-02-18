@@ -83,18 +83,11 @@ namespace Quinn.Player
 			// Deselect.
 			if (index == -1)
 			{
-				if (index > -1 && GetAt(index).Item.IsWearable)
-				{
-					UnsetBodySlot(GetAt(index).Item.AttireType);
-				}
-				else
-				{
-					HeldItem = null;
-					_selectedSlot = -1;
-					OnSelect?.Invoke(-1);
+				HeldItem = null;
+				_selectedSlot = -1;
+				OnSelect?.Invoke(-1);
 
-					HeldItemSprite.sprite = null;
-				}
+				HeldItemSprite.sprite = null;
 
 				Jiggle();
 				RuntimeManager.PlayOneShot(DequipSound, transform.position);
@@ -102,18 +95,48 @@ namespace Quinn.Player
 				return;
 			}
 
-			// Tried selecting an unselected slot.
-			if (_selectedSlot != index)
+			bool isSelectedEquippedWearable = false;
+			var s = GetAt(index);
+			if (s != null && s.Item != null)
+			{
+				var item = s.Item;
+
+				switch(s.Item.AttireType)
+				{
+					case AttireType.Head:
+						isSelectedEquippedWearable = item.IsWearable && item == HeadSlot;
+						break;
+
+					case AttireType.Torso:
+						isSelectedEquippedWearable = item.IsWearable && item == TorsoSlot;
+						break;
+
+					case AttireType.Legs:
+						isSelectedEquippedWearable = item.IsWearable && item == LegsSlot;
+						break;
+				}
+			}
+
+			// Selecting equipped wearable.
+			if (isSelectedEquippedWearable)
+			{
+				UnsetBodySlot(GetAt(index).Item.AttireType);
+
+				Jiggle();
+				RuntimeManager.PlayOneShot(DequipSound, transform.position);
+			}
+			// Selected unselected slot.
+			else if (_selectedSlot != index)
 			{
 				// Tried to select empty slot, deselecting.
-				if (GetAt(index) == null || index == _selectedSlot)
+				if (GetAt(index) == null)
 				{
 					Select(-1);
 					return;
 				}
 
 				// Select unselected slot.
-				if (GetAt(index).Item.IsEquippable)
+				if (GetAt(index).Item.IsEquippable && !GetAt(index).Item.IsWearable)
 				{
 					_selectedSlot = index;
 
@@ -129,17 +152,11 @@ namespace Quinn.Player
 				else if (GetAt(index).Item.IsWearable)
 				{
 					Unity.Services.Analytics.AnalyticsService.Instance.RecordEvent("equippedAttire");
-
 					SetBodySlot(GetAt(index).Item);
 
 					Jiggle();
 					RuntimeManager.PlayOneShot(EquipSound, transform.position);
 				}
-			}
-			// Tried selecting already selected slot, deselecting.
-			else
-			{
-				Select(-1);
 			}
 		}
 
@@ -209,7 +226,6 @@ namespace Quinn.Player
 
 			return reduction;
 		}
-		
 
 		private void SetBodySlot(Item item)
 		{
