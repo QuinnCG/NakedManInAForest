@@ -47,6 +47,11 @@ namespace Quinn.UI
 		{
 			float percent = PlayerController.Instance.HealthPercent;
 			HealthBar.value = percent;
+
+			if (Input.GetKeyDown(KeyCode.Escape))
+			{
+				OnToggleInventory(false);
+			}
 		}
 
 		private void UpdateSlots()

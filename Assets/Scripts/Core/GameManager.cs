@@ -23,13 +23,5 @@ namespace Quinn.Core
 			await UnityServices.InitializeAsync();
 			AnalyticsService.Instance.StartDataCollection();
 		}
-
-		private void Update()
-		{
-			if (Input.GetKeyDown(KeyCode.Escape))
-			{
-				Application.Quit();
-			}
-		}
 	}
 }

@@ -61,7 +61,6 @@ namespace Quinn.Player
 			_interaction = GetComponent<InteractionManager>();
 
 			_input.Move.performed += _ => OnStartMove();
-			_input.Dash.performed += _ => OnDash();
 
 			_hitPoints = HitPoints;
 		}
@@ -159,11 +158,6 @@ namespace Quinn.Player
 			var moveDir = _input.Move.ReadValue<Vector2>().normalized;
 			if (moveDir.sqrMagnitude > 0f) _direction = moveDir;
 			_movement.Move(moveDir);
-		}
-
-		private void OnDash()
-		{
-			_movement.Dash();
 		}
 
 		private IEnumerator DeathSequence()

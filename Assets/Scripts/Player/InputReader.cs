@@ -12,16 +12,12 @@ namespace Quinn.Player
 		public InputAction Interact { get; private set; }
 
 		[field: SerializeField]
-		public InputAction Dash { get; private set; }
-
-		[field: SerializeField]
 		public InputAction Inventory { get; private set; }
 
 		private void OnEnable()
 		{
 			Move.Enable();
 			Interact.Enable();
-			//Dash.Enable(); 
 			Inventory.Enable();
 		}
 
@@ -29,7 +25,6 @@ namespace Quinn.Player
 		{
 			Move.Disable();
 			Interact.Disable();
-			//Dash.Disable();
 			Inventory.Disable();
 		}
 	}
